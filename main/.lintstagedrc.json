@@ -1,0 +1,16 @@
+{
+  "*.{css,scss,sass}": ["prettier --write"],
+  "*.{js,cjs,mjs,jsx,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write",
+    "cross-env NODE_ENV=test jest --findRelatedTests --passWithNoTests --bail 5 --no-coverage"
+  ],
+  "*sample.env": ["yarn check:envfile sample.env"],
+  "*.md": ["prettier --write"],
+  "*.json": ["prettier --write"],
+  "CHANGELOG.md": ["yarn check:changelog"],
+  "*.{po,pot}": ["yarn locale:check"],
+  "*.po": ["yarn check:translations"],
+  "flag.d.ts": ["yarn check:flags"],
+  "*.{yml,yaml}": ["prettier --write"]
+}

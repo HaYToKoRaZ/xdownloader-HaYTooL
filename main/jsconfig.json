@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ESNext"
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "out",
+    "coverage",
+    "**/*.test.ts"
+  ]
+}

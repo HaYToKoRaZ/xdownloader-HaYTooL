@@ -1,0 +1,47 @@
+{
+  "name": "@media-harvest/webext-i18n-loader",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "typescript": "^6",
+    "webpack": "^5"
+  },
+  "dependencies": {
+    "gettext-parser": "^9.0.2",
+    "glob": "^13.0.6",
+    "schema-utils": "^4.3.3",
+    "source-map": "^0.7.6",
+    "typescript": "^6.0.2",
+    "webpack": "^5.105.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@types/gettext-parser": "^9.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
+    "@typescript-eslint/typescript-estree": "^8.58.0",
+    "babel-jest": "^30.3.0",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "jest": "^30.3.0",
+    "memfs": "^4.57.1",
+    "prettier": "^3.8.1",
+    "prettier-eslint": "^17.1.2",
+    "ts-jest": "^29.4.9",
+    "ts-loader": "^9.5.7",
+    "webpack-cli": "^7.0.2"
+  },
+  "scripts": {
+    "test": "yarn build && jest --coverage --testTimeout 20000",
+    "build": "tsc",
+    "ci": "yarn build && jest --coverage --ci --silent --testTimeout 100000"
+  }
+}

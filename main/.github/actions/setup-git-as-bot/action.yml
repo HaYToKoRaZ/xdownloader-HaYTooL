@@ -1,0 +1,50 @@
+name: Setup Git for GitHub App
+description: Configure git with a GitHub App identity for committing changes in workflows.
+author: 'Elton H.Y. Chou'
+
+inputs:
+  app-id:
+    description: 'GitHub App ID'
+    required: true
+  app-private-key:
+    description: 'GitHub App private key'
+    required: true
+
+outputs:
+  token:
+    description: 'The GitHub authentication token'
+    value: ${{ steps.app-token.outputs.token }}
+  user-name:
+    description: 'The GitHub App bot user name'
+    value: ${{ steps.configure-git.outputs.user_name }}
+  user-email:
+    description: 'The GitHub App bot user email'
+    value: ${{ steps.configure-git.outputs.user_email }}
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/create-github-app-token@v2
+      id: app-token
+      with:
+        app-id: ${{ inputs.app-id }}
+        private-key: ${{ inputs.app-private-key }}
+
+    - name: Get GitHub App User ID
+      id: get-user-id
+      shell: bash
+      run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+      env:
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+    - name: Configure git
+      id: configure-git
+      shell: bash
+      env:
+        GIT_USERNAME: '${{ steps.app-token.outputs.app-slug }}[bot]'
+        GIT_EMAIL: '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
+      run: |
+        echo "user_name=$GIT_USERNAME" >> "$GITHUB_OUTPUT"
+        echo "user_email=$GIT_EMAIL" >> "$GITHUB_OUTPUT"
+        git config --local user.name $GIT_USERNAME
+        git config --local user.email $GIT_EMAIL

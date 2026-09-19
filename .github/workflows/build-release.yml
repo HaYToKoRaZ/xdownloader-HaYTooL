@@ -1,0 +1,74 @@
+﻿name: Auto Build & Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'main/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Build & Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Prepare Environment Files
+        working-directory: ./main
+        run: |
+          cp sample.env .env
+          cp sample.env dev.env
+
+      - name: Install Dependencies
+        working-directory: ./main
+        run: yarn install
+
+      - name: Build Webpack Tools
+        working-directory: ./main
+        run: yarn workspaces foreach -p --include "@media-harvest/*" -A run build
+
+      - name: Build Chromium Extension
+        working-directory: ./main
+        run: yarn webpack --mode=production --env target=chrome
+
+      - name: Create Release ZIP
+        working-directory: ./main
+        run: |
+          mkdir -p ../dist
+          VERSION=$(node -p "require('./package.json').version")
+          cd build/chrome
+          zip -r ../../../dist/XDownloader-HaYTooL-v${VERSION}-WebStore.zip .
+          echo "PACKAGE_VERSION=${VERSION}" >> $GITHUB_ENV
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.PACKAGE_VERSION }}
+          name: "XDownloader HaYTooL v${{ env.PACKAGE_VERSION }}"
+          body: |
+            ## ⚡ XDownloader HaYTooL v${{ env.PACKAGE_VERSION }}
+            Otomatik oluşturulan en güncel Chrome & Chromium eklenti paketi.
+            
+            ### Kurulum:
+            1. `XDownloader-HaYTooL-v${{ env.PACKAGE_VERSION }}-WebStore.zip` dosyasını indirin ve bir klasöre çıkartın.
+            2. Tarayıcınızda (Chrome, Edge, Brave, Helium) `chrome://extensions` sayfasına gidin.
+            3. Sağ üstten **Geliştirici Modu (Developer Mode)** açın.
+            4. **Paketlenmemiş öge yükle (Load unpacked)** diyerek klasörü seçin.
+          files: |
+            dist/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

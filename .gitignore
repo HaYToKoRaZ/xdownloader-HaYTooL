@@ -1,0 +1,24 @@
+# Antigravity / Agents
+.agents/
+
+# Build & Packages
+*.zip
+*.7z
+*.tar.gz
+*.crx
+build/
+temp/
+
+# Dependencies
+node_modules/
+.pnp.*
+
+# Environment
+.env
+dev.env
+
+# System / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

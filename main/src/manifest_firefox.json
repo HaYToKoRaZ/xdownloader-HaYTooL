@@ -1,0 +1,72 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_app_appName__",
+  "short_name": "MediaHarvest",
+  "description": "__MSG_app_appDesc__",
+  "version": "__MANIFEST_RELEASE_VERSION__",
+  "version_name": "__MANIFEST_VERSION_NAME__",
+  "default_locale": "en",
+  "icons": {
+    "16": "assets/icons/icon@16.png",
+    "32": "assets/icons/icon@32.png",
+    "48": "assets/icons/icon@48.png",
+    "128": "assets/icons/icon@128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/icons/icon@16.png",
+      "32": "assets/icons/icon@32.png",
+      "48": "assets/icons/icon@48.png",
+      "128": "assets/icons/icon@128.png"
+    },
+    "default_popup": "index.html?tab=popup"
+  },
+  "options_ui": {
+    "page": "index.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["sw.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://twitter.com/*",
+        "*://mobile.twitter.com/*",
+        "*://tweetdeck.twitter.com/*",
+        "*://x.com/*"
+      ],
+      "js": ["main.js"],
+      "css": ["main.css"],
+      "run_at": "document_end"
+    },
+    {
+      "world": "MAIN",
+      "matches": [
+        "*://twitter.com/*",
+        "*://mobile.twitter.com/*",
+        "*://tweetdeck.twitter.com/*",
+        "*://x.com/*"
+      ],
+      "js": ["inject.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "*://twitter.com/*",
+    "*://mobile.twitter.com/*",
+    "*://api.twitter.com/*",
+    "*://tweetdeck.twitter.com/*",
+    "*://x.com/*",
+    "*://*.x.com/*",
+    "downloads",
+    "cookies",
+    "storage",
+    "notifications",
+    "unlimitedStorage",
+    "alarms"
+  ],
+  "optional_permissions": ["management"],
+  "web_accessible_resources": ["static/*"],
+  "content_security_policy": "default-src 'self'; connect-src 'self' https://o1169684.ingest.sentry.io https://*.mediaharvest.app https://cognito-identity.ap-northeast-1.amazonaws.com https://twitter.com https://*.twitter.com https://x.com https://*.x.com; style-src https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; script-src 'self'; img-src https://placehold.co https://pbs.twimg.com;"
+}

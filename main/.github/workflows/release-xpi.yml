@@ -1,0 +1,56 @@
+name: Release XPI
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'XPI version'
+        type: string
+        required: true
+      url:
+        description: 'XPI download URL'
+        type: string
+        required: true
+      min-browser-version:
+        description: 'Minimum browser version (semver). Optional.'
+        type: string
+        required: false
+        default: '111.0'
+  workflow_call:
+    inputs:
+      version:
+        description: 'XPI version'
+        type: string
+        required: true
+      url:
+        description: 'XPI download URL'
+        type: string
+        required: true
+      min-browser-version:
+        description: 'Minimum browser version (semver). Optional.'
+        type: string
+        required: false
+        default: '111.0'
+
+jobs:
+  xpi_release:
+    name: XPI Release
+    runs-on: ubuntu-latest
+    environment: release
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Gecko Release
+        uses: ./.github/actions/create-gecko-release
+        with:
+          endpoint: ${{ secrets.GECKO_RELEASE_ENDPOINT }}
+          id: ${{ vars.FF_ADDON_ID_SELF_SIGN }}
+          version: ${{ inputs.version }}
+          url: ${{ inputs.url }}
+          api-key: ${{ secrets.RELEASE_API_KEY }}
+          min-browser-version: ${{ inputs.min-browser-version }}
