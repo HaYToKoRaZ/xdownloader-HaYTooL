@@ -251,34 +251,24 @@ function initVisitorCounter() {
     data = {};
   }
 
-  // Generate realistic stable base stats + track actual visits
-  if (!data.baseSet) {
-    // Deterministic realistic baseline for our open source project
-    data.baseTotal = 1420;
-    data.baseYear = 1420;
-    data.baseMonth = 348;
-    data.baseToday = 26;
-    data.baseSet = true;
-  }
-
-  // Reset or increment per period
+  // Reset or increment per period strictly from 0
   if (data.lastDay !== todayKey) {
     data.lastDay = todayKey;
-    data.dayVisits = (data.dayVisits || 0) + 1;
+    data.dayVisits = 1;
   } else {
     data.dayVisits = (data.dayVisits || 0) + 1;
   }
 
   if (data.lastMonth !== monthKey) {
     data.lastMonth = monthKey;
-    data.monthVisits = (data.monthVisits || 0) + 1;
+    data.monthVisits = 1;
   } else {
     data.monthVisits = (data.monthVisits || 0) + 1;
   }
 
   if (data.lastYear !== yearKey) {
     data.lastYear = yearKey;
-    data.yearVisits = (data.yearVisits || 0) + 1;
+    data.yearVisits = 1;
   } else {
     data.yearVisits = (data.yearVisits || 0) + 1;
   }
@@ -289,10 +279,10 @@ function initVisitorCounter() {
     localStorage.setItem('haytool_site_stats', JSON.stringify(data));
   } catch {}
 
-  const todayCount = (data.baseToday || 0) + data.dayVisits;
-  const monthCount = (data.baseMonth || 0) + data.monthVisits;
-  const yearCount = (data.baseYear || 0) + data.yearVisits;
-  const totalCount = (data.baseTotal || 0) + data.totalVisits;
+  const todayCount = data.dayVisits;
+  const monthCount = data.monthVisits;
+  const yearCount = data.yearVisits;
+  const totalCount = data.totalVisits;
 
   const countTodayEl = document.getElementById('countToday');
   const countMonthEl = document.getElementById('countMonth');
