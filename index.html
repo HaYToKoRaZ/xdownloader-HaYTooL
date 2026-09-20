@@ -24,12 +24,12 @@
         <!-- Dil Seçici (Bayraklı) -->
         <div class="lang-picker">
           <button id="langBtn" class="pill-btn" aria-label="Dil Değiştir">
-            <span id="langFlag">🇹🇷</span>
+            <span id="langFlag" class="flag-emoji">🇹🇷</span>
             <span id="langLabel">TR</span>
           </button>
           <div id="langDropdown" class="lang-dropdown hidden">
-            <div class="lang-item" data-lang="tr"><span>🇹🇷</span> Türkçe</div>
-            <div class="lang-item" data-lang="en"><span>🇬🇧</span> English</div>
+            <div class="lang-item" data-lang="tr"><span class="flag-emoji">🇹🇷</span> Türkçe</div>
+            <div class="lang-item" data-lang="en"><span class="flag-emoji">🇬🇧</span> English</div>
           </div>
         </div>
 
@@ -67,7 +67,7 @@
           <span data-i18n="btnGithub">GitHub'da İncele</span>
         </a>
         <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" class="btn btn-secondary" target="_blank" rel="noopener">
-          <span data-i18n="btnDownload">Son Sürümü İndir (v1.0.6) 📦</span>
+          <span data-i18n="btnDownload">Son Sürümü İndir (v1.0.7) 📦</span>
         </a>
       </div>
 
@@ -99,6 +99,30 @@
         </div>
       </div>
 
+      <!-- Stats Band -->
+      <div class="stats-band">
+        <div class="stat-item">
+          <span class="stat-value" data-i18n="stat1Value">Açık Kaynak</span>
+          <span class="stat-label" data-i18n="stat1Label">MIT Lisansı</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value" data-i18n="stat2Value">1080p / 4K</span>
+          <span class="stat-label" data-i18n="stat2Label">Video Kalitesi</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value" data-i18n="stat3Value">Sıfır</span>
+          <span class="stat-label" data-i18n="stat3Label">Veri Toplama</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value" data-i18n="stat4Value">Reklamsız</span>
+          <span class="stat-label" data-i18n="stat4Label">Tamamen Ücretsiz</span>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
       <div class="features-grid">
         <div class="card">
           <div class="card-icon">⚡</div>
@@ -116,6 +140,52 @@
           <p data-i18n="feat3Desc">Verileriniz hiçbir üçüncü taraf sunucuya aktarılmaz. İndirmeler doğrudan yerel yapılır.</p>
         </div>
       </div>
+
+      <!-- How to Install -->
+      <div class="section-block">
+        <h2 class="section-title" data-i18n="installTitle">Nasıl Kurulur?</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3 data-i18n="step1Title">1. İndir</h3>
+            <p data-i18n="step1Desc">GitHub Releases sayfasından en son .crx veya .zip dosyasını indirin.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3 data-i18n="step2Title">2. Yükle</h3>
+            <p data-i18n="step2Desc">Tarayıcınızın Uzantılar sayfasını açın, geliştirici modunu etkinleştirin ve dosyayı sürükleyip bırakın.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3 data-i18n="step3Title">3. Kullan</h3>
+            <p data-i18n="step3Desc">X / Twitter'a gidin. Tweet'lerin altında indirme butonu otomatik olarak belirecektir.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="section-block">
+        <h2 class="section-title" data-i18n="faqTitle">Sık Sorulan Sorular</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" data-i18n="faq1Q">Hangi tarayıcılarla uyumlu?</button>
+            <div class="faq-answer"><p data-i18n="faq1A">Chrome, Chromium tabanlı tüm tarayıcılar (Edge, Brave, Opera, Helium vb.) ve WebExtension API destekleyen tarayıcılarla uyumludur.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-i18n="faq2Q">Verilerimi topluyor mu?</button>
+            <div class="faq-answer"><p data-i18n="faq2A">Hayır. XDownloader HaYTooL hiçbir kişisel bilginizi, indirme geçmişinizi veya X hesap bilgilerinizi kayıt altına almaz ya da herhangi bir sunucuya göndermez.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-i18n="faq3Q">Neden mağazada yok?</button>
+            <div class="faq-answer"><p data-i18n="faq3A">Chrome Web Store ve Edge Add-ons mağaza onay süreçleri devam etmektedir. Bu süreçte GitHub'dan manuel kurulum yapabilirsiniz.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" data-i18n="faq4Q">Ücretsiz mi?</button>
+            <div class="faq-answer"><p data-i18n="faq4A">Evet, tamamen ücretsiz ve açık kaynaklıdır. MIT lisansı altında dağıtılmaktadır.</p></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 

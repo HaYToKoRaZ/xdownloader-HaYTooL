@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gizlilik Politikası - XDownloader HaYTooL</title>
+  <meta name="description" content="XDownloader HaYTooL gizlilik politikası. Hiçbir kişisel veri toplanmaz." />
   <link rel="icon" type="image/png" href="assets/icon128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +13,7 @@
 </head>
 <body>
   <div class="glow-bg"></div>
+
   <header class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo" style="text-decoration:none; color:inherit;">
@@ -19,31 +21,98 @@
         <span class="logo-text">XDownloader <span class="gradient-text">HaYTooL</span></span>
       </a>
       <div class="nav-actions">
-        <a href="index.html" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.9rem;">← Ana Sayfa</a>
+        <!-- Dil Seçici -->
+        <div class="lang-picker">
+          <button id="langBtn" class="pill-btn" aria-label="Change Language">
+            <span id="langFlag" class="flag-emoji">🇹🇷</span>
+            <span id="langLabel">TR</span>
+          </button>
+          <div id="langDropdown" class="lang-dropdown hidden">
+            <div class="lang-item" data-lang="tr"><span class="flag-emoji">🇹🇷</span> Türkçe</div>
+            <div class="lang-item" data-lang="en"><span class="flag-emoji">🇬🇧</span> English</div>
+          </div>
+        </div>
+
+        <!-- Tema Değiştirici -->
+        <button id="themeToggle" class="pill-btn icon-only" aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+
+        <a href="index.html" class="btn btn-secondary" style="padding: 0.4rem 0.9rem; font-size: 0.9rem;" data-i18n="privBackBtn">← Ana Sayfa</a>
       </div>
     </div>
   </header>
 
-  <main class="hero" style="text-align: left; max-width: 800px; margin: 0 auto; padding-top: 2rem;">
+  <main class="privacy-main">
     <div class="container">
-      <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 1rem;">Gizlilik Politikası (Privacy Policy)</h1>
-      <p style="color: var(--text-muted); margin-bottom: 2rem;">Son Güncelleme: 2026</p>
-
-      <div class="card" style="margin-bottom: 1.5rem;">
-        <h3>1. Sıfır Veri Toplama</h3>
-        <p>XDownloader HaYTooL eklentisi hiçbir kişisel bilginizi, X (Twitter) hesap hareketlerinizi, IP adresinizi veya indirdiğiniz medyaları kayıt altına almaz ve harici hiçbir sunucuya iletmez.</p>
+      <div class="privacy-header">
+        <h1 data-i18n="privacyTitle">Gizlilik Politikası</h1>
+        <p class="privacy-updated" data-i18n="privacyUpdated">Son Güncelleme: Eylül 2026</p>
       </div>
 
-      <div class="card" style="margin-bottom: 1.5rem;">
-        <h3>2. İzinler</h3>
-        <p>Eklentinin talep ettiği izinler (İndirmeler, Depolama) yalnızca medyayı bilgisayarınıza kaydetmek ve tercih ettiğiniz ayarları yerel tarayıcınızda tutmak için kullanılır.</p>
-      </div>
+      <div class="privacy-grid">
 
-      <div class="card" style="margin-bottom: 1.5rem;">
-        <h3>3. İletişim</h3>
-        <p>Her türlü soru ve geri bildirim için <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" style="color:var(--accent)">GitHub Deposu</a> üzerinden ulaşabilirsiniz.</p>
+        <div class="privacy-card">
+          <div class="privacy-card-icon">🚫</div>
+          <h3 data-i18n="priv1Title">1. Veri Toplanmıyor</h3>
+          <p data-i18n="priv1Body">XDownloader HaYTooL eklentisi hiçbir kişisel bilginizi, X (Twitter) hesap hareketlerinizi, IP adresinizi veya indirdiğiniz medyaları kayıt altına almaz ve harici hiçbir sunucuya iletmez. Tüm işlemler yalnızca sizin bilgisayarınızda gerçekleşir.</p>
+        </div>
+
+        <div class="privacy-card">
+          <div class="privacy-card-icon">🔑</div>
+          <h3 data-i18n="priv2Title">2. İzinler</h3>
+          <p data-i18n="priv2Body">Eklentinin talep ettiği izinler (İndirmeler, Depolama, Sekme Erişimi) yalnızca medyayı bilgisayarınıza kaydetmek, indirme geçmişini yerel olarak yönetmek ve tercih ettiğiniz ayarları tarayıcınızda tutmak için kullanılır. Bu izinler üçüncü taraflarla asla paylaşılmaz.</p>
+        </div>
+
+        <div class="privacy-card">
+          <div class="privacy-card-icon">💾</div>
+          <h3 data-i18n="priv3Title">3. Yerel Depolama</h3>
+          <p data-i18n="priv3Body">Ayarlarınız (tema, dil tercihi, indirme klasörü vb.) yalnızca tarayıcınızın yerel depolama alanında (localStorage / browser.storage) tutulur. Bu veriler cihazınızın dışına çıkmaz.</p>
+        </div>
+
+        <div class="privacy-card">
+          <div class="privacy-card-icon">🌐</div>
+          <h3 data-i18n="priv4Title">4. Üçüncü Taraf Hizmetler</h3>
+          <p data-i18n="priv4Body">XDownloader HaYTooL herhangi bir üçüncü taraf analitik, reklam veya izleme hizmeti kullanmaz. İndirme işlemleri doğrudan X (Twitter) sunucularından gerçekleşir; araya herhangi bir proxy veya aracı girmez.</p>
+        </div>
+
+        <div class="privacy-card">
+          <div class="privacy-card-icon">🧒</div>
+          <h3 data-i18n="priv5Title">5. Çocuk Gizliliği</h3>
+          <p data-i18n="priv5Body">Bu uzantı 13 yaş altı çocuklara yönelik olarak tasarlanmamıştır. Eklenti, kullanıcının yaşını doğrulama mekanizmasına sahip değildir; ancak herhangi bir kişisel veri toplamadığından çocuk kullanıcılar için de güvenlidir.</p>
+        </div>
+
+        <div class="privacy-card">
+          <div class="privacy-card-icon">📋</div>
+          <h3 data-i18n="priv6Title">6. Politika Değişiklikleri</h3>
+          <p data-i18n="priv6Body">Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler GitHub deposundaki Release Notes bölümünde duyurulacaktır. Eklentiyi kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
+        </div>
+
+        <div class="privacy-card privacy-card-full">
+          <div class="privacy-card-icon">📬</div>
+          <h3 data-i18n="priv7Title">7. İletişim</h3>
+          <p data-i18n="priv7Body">Gizlilik politikasına ilişkin soru veya geri bildirimleriniz için GitHub deposu üzerinden Issue açabilirsiniz.</p>
+          <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" class="btn btn-primary" style="margin-top:1.25rem; display:inline-flex; width:fit-content;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span data-i18n="privGithubLink">GitHub Deposu</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p data-i18n="footerText">© 2026 XDownloader HaYTooL. Açık kaynaklı ve bağımsızdır.</p>
+      <div class="footer-links">
+        <a href="https://haytokoraz.github.io/" target="_blank">Portal</a>
+        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank">GitHub</a>
+        <a href="index.html" data-i18n="privBackBtn">← Ana Sayfa</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
