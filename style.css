@@ -425,6 +425,42 @@ body {
   color: var(--text-main);
 }
 
+/* Subtle Visitor Counter */
+.footer-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--btn-secondary-bg);
+  border: 1px solid var(--surface-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.counter-icon {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.counter-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.counter-item strong {
+  color: var(--accent);
+  font-weight: 600;
+  font-feature-settings: 'tnum';
+}
+
+.counter-sep {
+  opacity: 0.3;
+}
+
 /* Flag emoji - OS native rendering (bypasses Outfit font) */
 .flag-emoji {
   font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', sans-serif !important;
