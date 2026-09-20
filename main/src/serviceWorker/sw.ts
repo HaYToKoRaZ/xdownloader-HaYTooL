@@ -73,6 +73,10 @@ alarms.onAlarm.addListener(async alarm => {
 Browser.contextMenus?.onClicked?.addListener((info) => {
   if (info.menuItemId === 'open-official-website') {
     Browser.tabs.create({ url: 'https://haytokoraz.github.io/xdownloader-HaYTooL/' })
+  } else if (info.menuItemId === 'open-author-x') {
+    Browser.tabs.create({ url: 'https://x.com/HaYTo' })
+  } else if (info.menuItemId === 'open-history-tab') {
+    Browser.tabs.create({ url: Browser.runtime.getURL('index.html?section=history#history') })
   }
 })
 

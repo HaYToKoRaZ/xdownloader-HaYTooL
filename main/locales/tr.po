@@ -655,5 +655,18 @@ msgstr "Video küçük resmi"
 
 msgctxt "app"
 msgid "contextMenu_openWebsite"
-msgstr "XDownloader HaYTooL Resmi Web Sitesi"
+msgstr "Resmi Web Sitesi"
+
+msgctxt "app"
+msgid "contextMenu_openAuthorX"
+msgstr "Geliştirici X Profili (@HaYTo)"
+
+msgctxt "app"
+msgid "contextMenu_openHistory"
+msgstr "İndirme Geçmişi"
+
+msgctxt "popup"
+msgid "Website"
+msgstr "Web Sitesi"
+
 

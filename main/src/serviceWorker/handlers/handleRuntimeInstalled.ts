@@ -32,13 +32,36 @@ const handleRuntimeInstalled =
     }
 
     try {
+      await Browser.contextMenus.removeAll()
+
+      // 1. Tarayıcı araç çubuğundaki eklenti simgesine sağ tıklandığında (action):
       Browser.contextMenus.create({
         id: 'open-official-website',
-        title: Browser.i18n.getMessage('app_contextMenu_openWebsite') || 'XDownloader HaYTooL Web Sitesi',
+        title: Browser.i18n.getMessage('app_contextMenu_openWebsite') || 'Resmi Web Sitesi',
+        contexts: ['action'],
+      })
+
+      Browser.contextMenus.create({
+        id: 'open-author-x',
+        title: Browser.i18n.getMessage('app_contextMenu_openAuthorX') || 'Geliştirici X Profili (@HaYTo)',
+        contexts: ['action'],
+      })
+
+      // 2. Geçmiş sekmesi (Hem eklenti simgesi sağ tıkında hem de x.com / twitter.com sayfalarında):
+      Browser.contextMenus.create({
+        id: 'open-history-tab',
+        title: Browser.i18n.getMessage('app_contextMenu_openHistory') || 'İndirme Geçmişi',
         contexts: ['action', 'page'],
+        documentUrlPatterns: [
+          '*://twitter.com/*',
+          '*://mobile.twitter.com/*',
+          '*://tweetdeck.twitter.com/*',
+          '*://x.com/*',
+          '*://*.x.com/*',
+        ],
       })
     } catch {
-      // Menu item may already exist
+      // Menu items already registered or contextMenus API not ready
     }
   }
 

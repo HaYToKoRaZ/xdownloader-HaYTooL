@@ -657,5 +657,18 @@ msgstr "Video thumbnail"
 
 msgctxt "app"
 msgid "contextMenu_openWebsite"
-msgstr "XDownloader HaYTooL Official Website"
+msgstr "Official Website"
+
+msgctxt "app"
+msgid "contextMenu_openAuthorX"
+msgstr "Developer X Profile (@HaYTo)"
+
+msgctxt "app"
+msgid "contextMenu_openHistory"
+msgstr "Download History"
+
+msgctxt "popup"
+msgid "Website"
+msgstr "Website"
+
 

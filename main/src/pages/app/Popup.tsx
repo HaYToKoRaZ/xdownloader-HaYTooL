@@ -35,7 +35,16 @@ import { type Storage, runtime, storage, tabs } from 'webextension-polyfill'
 const NavBar = () => {
   return (
     <Flex w="100%" h="48px" px={4} align="center">
-      <HStack spacing={2} align="center">
+      <HStack
+        spacing={2}
+        align="center"
+        as="button"
+        cursor="pointer"
+        onClick={() => tabs.create({ active: true, url: Links.website })}
+        title={i18n('Website', 'popup')}
+        _hover={{ opacity: 0.85 }}
+        style={{ background: 'none', border: 'none', padding: 0 }}
+      >
         <Box
           as="img"
           src="assets/icons/icon@32.png"
@@ -50,6 +59,19 @@ const NavBar = () => {
       </HStack>
       <Spacer />
       <HStack spacing={1}>
+        <IconButton
+          aria-label="website"
+          variant="ghost"
+          size="sm"
+          bg="transparent"
+          color="white"
+          _hover={{ bg: 'rgba(255, 255, 255, 0.15)' }}
+          _active={{ bg: 'rgba(255, 255, 255, 0.3)' }}
+          icon={<Icon boxSize={5} as={BiWorld} />}
+          onClick={() => tabs.create({ active: true, url: Links.website })}
+          data-testid="navbar-website"
+          title={i18n('Website', 'popup')}
+        />
         <IconButton
           aria-label="history"
           variant="ghost"
