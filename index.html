@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XDownloader HaYTooL - X (Twitter) Medya İndirici</title>
+  <meta name="description" content="X (Twitter) videolarını, resimlerini ve GIF'lerini en yüksek kalitede tek tıkla indirin." />
+  <link rel="icon" type="image/png" href="assets/icon128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow-bg"></div>
+  
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-badge">⚡</span>
+        <span class="logo-text">XDownloader <span class="gradient-text">HaYTooL</span></span>
+      </div>
+      <div class="nav-actions">
+        <!-- Dil Seçici (Bayraklı) -->
+        <div class="lang-picker">
+          <button id="langBtn" class="pill-btn" aria-label="Dil Değiştir">
+            <span id="langFlag">🇹🇷</span>
+            <span id="langLabel">TR</span>
+          </button>
+          <div id="langDropdown" class="lang-dropdown hidden">
+            <div class="lang-item" data-lang="tr"><span>🇹🇷</span> Türkçe</div>
+            <div class="lang-item" data-lang="en"><span>🇬🇧</span> English</div>
+          </div>
+        </div>
+
+        <!-- Tema Değiştirici -->
+        <button id="themeToggle" class="pill-btn icon-only" aria-label="Tema Değiştir" title="Karanlık / Aydınlık Tema">
+          <span id="themeIcon">☀️</span>
+        </button>
+
+        <a href="https://haytokoraz.github.io/" class="portal-link" target="_blank" rel="noopener">HaYTooL Portal ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container">
+      <div class="badge" data-i18n="badge">✨ Gelişmiş X (Twitter) Medya İndirici</div>
+      <h1 class="hero-title">
+        <span data-i18n="title1">X / Twitter Medyalarını</span><br />
+        <span class="gradient-text" data-i18n="title2">Tek Tıkla En Yüksek Kalitede İndirin</span>
+      </h1>
+      <p class="hero-desc" data-i18n="desc">
+        Videolar, fotoğraflar ve animasyonlu GIF'ler... Orijinal çözünürlüklerinde, anında ve güvenli bir şekilde bilgisayarınıza kaydedin. Tamamen yerel, reklamsız ve hızlı.
+      </p>
+
+      <div class="hero-mascot-container">
+        <div class="mascot-frame">
+          <img src="assets/cat_mascot.jpg" alt="Cat Developer using computer" class="hero-cat-img" />
+          <div class="mascot-badge">🐱 <span>Powered by HaYTooL</span></div>
+        </div>
+      </div>
+
+      <div class="cta-group">
+        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span data-i18n="btnGithub">GitHub'da İncele</span>
+        </a>
+        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" class="btn btn-secondary" target="_blank" rel="noopener">
+          <span data-i18n="btnDownload">Son Sürümü İndir (v1.0.6) 📦</span>
+        </a>
+      </div>
+
+      <!-- Store Badges Section -->
+      <div class="store-badges-wrapper">
+        <p class="store-badges-title" data-i18n="storeTitle">Desteklenen Tarayıcılar ve Mağazalar</p>
+        <div class="store-badges">
+          <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" class="store-badge-card" title="Chrome Web Store" target="_blank">
+            <img src="assets/chrome.svg" alt="Chrome" width="34" height="34" />
+            <div class="store-badge-text">
+              <span class="store-sub">Chrome</span>
+              <span class="store-name">Web Store</span>
+            </div>
+          </a>
+          <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" class="store-badge-card" title="Microsoft Edge" target="_blank">
+            <img src="assets/edge.svg" alt="Edge" width="34" height="34" />
+            <div class="store-badge-text">
+              <span class="store-sub">Microsoft</span>
+              <span class="store-name">Edge Add-ons</span>
+            </div>
+          </a>
+          <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" class="store-badge-card" title="Helium Browser" target="_blank">
+            <img src="assets/helium.png" alt="Helium" width="34" height="34" />
+            <div class="store-badge-text">
+              <span class="store-sub">Helium</span>
+              <span class="store-name">Browser</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="features-grid">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3 data-i18n="feat1Title">Anında İndirme</h3>
+          <p data-i18n="feat1Desc">Tweetlerin altına entegre olan indirme butonuyla tek tıklamayla medyayı kaydedin.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💎</div>
+          <h3 data-i18n="feat2Title">En Yüksek Çözünürlük</h3>
+          <p data-i18n="feat2Desc">Videolarda 1080p / 4K ve fotoğraflarda maksimum orijinal boyut seçeneği.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 data-i18n="feat3Title">Gizlilik Odaklı</h3>
+          <p data-i18n="feat3Desc">Verileriniz hiçbir üçüncü taraf sunucuya aktarılmaz. İndirmeler doğrudan yerel yapılır.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 XDownloader HaYTooL. Açık kaynaklı ve bağımsızdır.</p>
+      <div class="footer-links">
+        <a href="https://haytokoraz.github.io/" target="_blank">Portal</a>
+        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank">GitHub</a>
+        <a href="privacy.html" data-i18n="privacyLink">Gizlilik Politikası</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
