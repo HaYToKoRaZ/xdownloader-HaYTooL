@@ -1,4 +1,4 @@
-﻿msgid ""
+msgid ""
 msgstr ""
 "Project-Id-Version: twitter-media-harvest (4.5.7)\n"
 "POT-Creation-Date: 2026-06-18 15:04+0800\n"
@@ -654,3 +654,8 @@ msgstr "Report issues"
 msgctxt "popup"
 msgid "Video thumbnail"
 msgstr "Video thumbnail"
+
+msgctxt "app"
+msgid "contextMenu_openWebsite"
+msgstr "XDownloader HaYTooL Official Website"
+

@@ -69,3 +69,10 @@ alarms.onAlarm.addListener(async alarm => {
     /* eslint-enable no-console */
   }
 })
+
+Browser.contextMenus?.onClicked?.addListener((info) => {
+  if (info.menuItemId === 'open-official-website') {
+    Browser.tabs.create({ url: 'https://haytokoraz.github.io/xdownloader-HaYTooL/' })
+  }
+})
+

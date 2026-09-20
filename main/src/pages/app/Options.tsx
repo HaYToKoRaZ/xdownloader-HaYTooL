@@ -49,8 +49,8 @@ import Links from '#pages/links'
 import { getActiveLocale, setLocale } from '#libs/i18n'
 
 const SUPPORTED_LANGUAGES = [
-  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'tr', name: 'Türkçe', flagSrc: 'assets/flags/tr.svg' },
+  { code: 'en', name: 'English', flagSrc: 'assets/flags/en.svg' },
 ]
 
 type SectionCardProps = {
@@ -167,9 +167,13 @@ const App = ({
                 borderRadius="md"
                 px={3}
               >
-                <span style={{ fontFamily: "'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif", fontSize: '1.15em', marginRight: '5px', verticalAlign: 'middle' }}>
-                  {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.flag || '🌐'}
-                </span>
+                <img
+                  src={SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.flagSrc || 'assets/flags/tr.svg'}
+                  width={22}
+                  height={16}
+                  alt={currentLang}
+                  style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '5px', borderRadius: '2px' }}
+                />
                 {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.name || 'Language'}
               </MenuButton>
               <MenuList minW="160px" zIndex={20}>
@@ -180,7 +184,13 @@ const App = ({
                     fontWeight={currentLang === lang.code ? 'bold' : 'normal'}
                     bg={currentLang === lang.code ? (colorMode === 'light' ? 'gray.100' : 'gray.700') : undefined}
                   >
-                    <span style={{ fontFamily: "'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif", fontSize: '1.1em', marginRight: '8px' }}>{lang.flag}</span>
+                    <img
+                      src={lang.flagSrc}
+                      width={20}
+                      height={14}
+                      alt={lang.code}
+                      style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '8px', borderRadius: '2px' }}
+                    />
                     {lang.name}
                   </MenuItem>
                 ))}

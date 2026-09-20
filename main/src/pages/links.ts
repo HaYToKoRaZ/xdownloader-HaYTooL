@@ -14,7 +14,7 @@ const Links = {
     Browser.runtime.getManifest().version,
   privacy:
     'https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/blob/main/PRIVACY_POLICY.md',
-  website: 'https://haytokoraz.github.io/',
+  website: 'https://haytokoraz.github.io/xdownloader-HaYTooL/',
 }
 
 export default Links

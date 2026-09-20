@@ -66,7 +66,8 @@
     "storage",
     "notifications",
     "unlimitedStorage",
-    "alarms"
+    "alarms",
+    "contextMenus"
   ],
   "optional_permissions": ["management"],
   "web_accessible_resources": [

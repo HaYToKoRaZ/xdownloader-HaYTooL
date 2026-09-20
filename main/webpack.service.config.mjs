@@ -197,6 +197,11 @@ export default (env, argv) => {
             to: 'assets/icons/[name][ext]',
           },
           {
+            from: 'assets/flags/*.svg',
+            context: 'src',
+            to: 'assets/flags/[name][ext]',
+          },
+          {
             from: 'pages/*.html',
             context: 'src',
             to: '[name][ext]',

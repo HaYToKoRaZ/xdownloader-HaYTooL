@@ -7,7 +7,7 @@ import type { DomainEventPublisher } from '#domain/eventPublisher'
 import RuntimeInstalled from '#domain/events/RuntimeInstalled'
 import RuntimeUpdated from '#domain/events/RuntimeUpdated'
 import { getVersion } from '#utils/runtime'
-import type { Runtime } from 'webextension-polyfill'
+import Browser, { type Runtime } from 'webextension-polyfill'
 
 const handleRuntimeInstalled =
   (
@@ -29,6 +29,16 @@ const handleRuntimeInstalled =
           previous: details?.previousVersion ?? currentVersion,
         })
       )
+    }
+
+    try {
+      Browser.contextMenus.create({
+        id: 'open-official-website',
+        title: Browser.i18n.getMessage('app_contextMenu_openWebsite') || 'XDownloader HaYTooL Web Sitesi',
+        contexts: ['action', 'page'],
+      })
+    } catch {
+      // Menu item may already exist
     }
   }
 
