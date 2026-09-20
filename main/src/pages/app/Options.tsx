@@ -166,8 +166,11 @@ const App = ({
                 variant="outline"
                 borderRadius="md"
                 px={3}
+                fontFamily="inherit"
               >
-                {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.flag || '🌐'}{' '}
+                <Text as="span" fontSize="1.15em" fontFamily="'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif" verticalAlign="middle" mr={1}>
+                  {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.flag || '🌐'}
+                </Text>
                 {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.name || 'Language'}
               </MenuButton>
               <MenuList minW="160px" zIndex={20}>
@@ -178,7 +181,8 @@ const App = ({
                     fontWeight={currentLang === lang.code ? 'bold' : 'normal'}
                     bg={currentLang === lang.code ? (colorMode === 'light' ? 'gray.100' : 'gray.700') : undefined}
                   >
-                    <Text mr={2}>{lang.flag}</Text> {lang.name}
+                    <Text as="span" fontSize="1.1em" fontFamily="'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif" mr={2}>{lang.flag}</Text>
+                    {lang.name}
                   </MenuItem>
                 ))}
               </MenuList>
