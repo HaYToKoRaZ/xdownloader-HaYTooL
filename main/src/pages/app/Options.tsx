@@ -17,9 +17,10 @@ import GeneralOptions from '#pages/components/GeneralOptions'
 import HistoryTable from '#pages/components/History'
 import IntegrationOptions from '#pages/components/IntegrationOptions'
 import { DownloadSettings, FeatureSettings } from '#schema'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 import {
   Box,
+  Button,
   Card,
   CardBody,
   CardHeader,
@@ -28,6 +29,11 @@ import {
   Heading,
   IconButton,
   Image,
+  Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Stack,
   Tab,
   TabList,
@@ -38,7 +44,22 @@ import {
   useColorMode,
 } from '@chakra-ui/react'
 import type { JSX } from 'react'
-import React from 'react'
+import React, { useState } from 'react'
+import Links from '#pages/links'
+import { getActiveLocale, setLocale } from '#libs/i18n'
+
+const SUPPORTED_LANGUAGES = [
+  { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'ja', name: '日本語', flag: '🇯🇵' },
+  { code: 'zh_CN', name: '简体中文', flag: '🇨🇳' },
+  { code: 'zh_TW', name: '繁體中文', flag: '🇹🇼' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+  { code: 'ko', name: '한국어', flag: '🇰🇷' },
+]
 
 type SectionCardProps = {
   title: string
@@ -102,6 +123,14 @@ const App = ({
   tweetResponseCache,
 }: InfraProvider) => {
   const { colorMode, toggleColorMode } = useColorMode()
+  const [currentLang, setCurrentLang] = useState<string>(getActiveLocale())
+
+  const handleLanguageChange = async (langCode: string) => {
+    setCurrentLang(langCode)
+    await setLocale(langCode)
+    // Reload to apply dictionary across all components seamlessly
+    window.location.reload()
+  }
 
   const initialTabIndex =
     window.location.hash === '#history' ||
@@ -124,11 +153,45 @@ const App = ({
         <HStack justify="space-between" maxW="1100px" mx="auto">
           <HStack spacing={3}>
             <Image src="assets/icons/icon@32.png" boxSize="28px" alt="XDownloader Logo" />
-            <Heading size="md" letterSpacing="wide">
-              XDownloader HaYTooL
-            </Heading>
+            <Link
+              href={Links.website}
+              isExternal
+              _hover={{ textDecoration: 'none', color: 'cyan.500' }}
+              cursor="pointer"
+            >
+              <Heading size="md" letterSpacing="wide">
+                XDownloader HaYTooL
+              </Heading>
+            </Link>
           </HStack>
-          <HStack spacing={2}>
+          <HStack spacing={3}>
+            {/* Language Selector with Flags */}
+            <Menu>
+              <MenuButton
+                as={Button}
+                rightIcon={<ChevronDownIcon />}
+                size="sm"
+                variant="outline"
+                borderRadius="md"
+                px={3}
+              >
+                {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.flag || '🌐'}{' '}
+                {SUPPORTED_LANGUAGES.find((l) => l.code === currentLang)?.name || 'Language'}
+              </MenuButton>
+              <MenuList minW="160px" zIndex={20}>
+                {SUPPORTED_LANGUAGES.map((lang) => (
+                  <MenuItem
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    fontWeight={currentLang === lang.code ? 'bold' : 'normal'}
+                    bg={currentLang === lang.code ? (colorMode === 'light' ? 'gray.100' : 'gray.700') : undefined}
+                  >
+                    <Text mr={2}>{lang.flag}</Text> {lang.name}
+                  </MenuItem>
+                ))}
+              </MenuList>
+            </Menu>
+
             <IconButton
               aria-label="Toggle Color Mode"
               icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}

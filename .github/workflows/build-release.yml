@@ -1,4 +1,4 @@
-﻿name: Auto Build & Release
+name: Auto Build & Release
 
 on:
   push:
@@ -61,13 +61,13 @@ jobs:
           name: "XDownloader HaYTooL v${{ env.PACKAGE_VERSION }}"
           body: |
             ## ⚡ XDownloader HaYTooL v${{ env.PACKAGE_VERSION }}
-            Otomatik oluşturulan en güncel Chrome & Chromium eklenti paketi.
+            Automated production build for Chrome & Chromium browsers.
             
-            ### Kurulum:
-            1. `XDownloader-HaYTooL-v${{ env.PACKAGE_VERSION }}-WebStore.zip` dosyasını indirin ve bir klasöre çıkartın.
-            2. Tarayıcınızda (Chrome, Edge, Brave, Helium) `chrome://extensions` sayfasına gidin.
-            3. Sağ üstten **Geliştirici Modu (Developer Mode)** açın.
-            4. **Paketlenmemiş öge yükle (Load unpacked)** diyerek klasörü seçin.
+            ### Installation:
+            1. Download and extract `XDownloader-HaYTooL-v${{ env.PACKAGE_VERSION }}-WebStore.zip` into a folder.
+            2. In your browser (Chrome, Edge, Brave, Helium), open `chrome://extensions`.
+            3. Enable **Developer Mode** in the top right corner.
+            4. Click **Load unpacked** and select the extracted folder.
           files: |
             dist/*.zip
         env:
