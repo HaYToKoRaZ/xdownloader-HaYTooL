@@ -111,7 +111,7 @@ body {
   align-items: center;
   gap: 0.4rem;
   font-size: 0.9rem;
-  font-family: inherit;
+  font-family: 'Outfit', 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
 }
 
 .pill-btn:hover {
@@ -416,16 +416,17 @@ body {
   color: var(--text-main);
 }
 
-/* Flag emoji fix */
+/* Flag emoji - OS native rendering (bypasses Outfit font) */
 .flag-emoji {
-  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
-  font-size: 1.2em;
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', sans-serif !important;
+  font-size: 1.25em;
   line-height: 1;
+  display: inline-block;
   vertical-align: middle;
 }
 
 .lang-item .flag-emoji {
-  font-size: 1.1em;
+  font-size: 1.15em;
 }
 
 /* Stats Band */
