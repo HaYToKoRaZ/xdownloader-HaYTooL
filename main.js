@@ -17,6 +17,8 @@ const translations = {
     feat3Title: 'Gizlilik Odaklı',
     feat3Desc: 'Verileriniz hiçbir üçüncü taraf sunucuya aktarılmaz. İndirmeler doğrudan yerel yapılır.',
     privacyLink: 'Gizlilik Politikası',
+    mascotBadge: 'Powered by HaYTooL',
+    footerText: '© 2026 XDownloader HaYTooL. Açık kaynaklı ve bağımsızdır.',
   },
   en: {
     flag: '🇬🇧',
@@ -36,6 +38,8 @@ const translations = {
     feat3Title: 'Privacy-Focused',
     feat3Desc: 'Your data is never sent to third-party servers. All downloads are handled directly and locally.',
     privacyLink: 'Privacy Policy',
+    mascotBadge: 'Powered by HaYTooL',
+    footerText: '© 2026 XDownloader HaYTooL. Open source and independent.',
   }
 };
 
