@@ -156,7 +156,14 @@ function applyLang(lang) {
 
   const langFlag = document.getElementById('langFlag');
   const langLabel = document.getElementById('langLabel');
-  if (langFlag) langFlag.textContent = t.flag;
+  if (langFlag) {
+    if (langFlag.tagName === 'IMG') {
+      langFlag.src = `assets/flags/${lang}.svg`;
+      langFlag.alt = lang.toUpperCase();
+    } else {
+      langFlag.textContent = t.flag;
+    }
+  }
   if (langLabel) langLabel.textContent = t.label;
 
   // Update page title if key exists
