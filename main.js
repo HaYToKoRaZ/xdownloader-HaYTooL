@@ -246,43 +246,52 @@ function initVisitorCounter() {
 
   let data;
   try {
-    data = JSON.parse(localStorage.getItem('haytool_site_stats') || '{}');
+    data = JSON.parse(localStorage.getItem('haytool_site_stats_v2') || '{}');
   } catch {
     data = {};
   }
 
-  // Reset or increment per period strictly from 0
+  // Sayfa her yenilendiğinde artmaması için: Mevcut tarayıcı oturumunu kontrol et
+  const sessionKey = 'haytool_session_seen_' + todayKey;
+  const isNewSession = !sessionStorage.getItem(sessionKey);
+
+  // Periyotlar değiştikçe sıfırla veya yeni benzersiz ziyarette artır
   if (data.lastDay !== todayKey) {
     data.lastDay = todayKey;
-    data.dayVisits = 1;
-  } else {
+    data.dayVisits = isNewSession ? 1 : 0;
+  } else if (isNewSession) {
     data.dayVisits = (data.dayVisits || 0) + 1;
   }
 
   if (data.lastMonth !== monthKey) {
     data.lastMonth = monthKey;
-    data.monthVisits = 1;
-  } else {
+    data.monthVisits = isNewSession ? 1 : 0;
+  } else if (isNewSession) {
     data.monthVisits = (data.monthVisits || 0) + 1;
   }
 
   if (data.lastYear !== yearKey) {
     data.lastYear = yearKey;
-    data.yearVisits = 1;
-  } else {
+    data.yearVisits = isNewSession ? 1 : 0;
+  } else if (isNewSession) {
     data.yearVisits = (data.yearVisits || 0) + 1;
   }
 
-  data.totalVisits = (data.totalVisits || 0) + 1;
+  if (isNewSession) {
+    data.totalVisits = (data.totalVisits || 0) + 1;
+    try {
+      sessionStorage.setItem(sessionKey, '1');
+    } catch {}
+  }
 
   try {
-    localStorage.setItem('haytool_site_stats', JSON.stringify(data));
+    localStorage.setItem('haytool_site_stats_v2', JSON.stringify(data));
   } catch {}
 
-  const todayCount = data.dayVisits;
-  const monthCount = data.monthVisits;
-  const yearCount = data.yearVisits;
-  const totalCount = data.totalVisits;
+  const todayCount = data.dayVisits || 1;
+  const monthCount = data.monthVisits || 1;
+  const yearCount = data.yearVisits || 1;
+  const totalCount = data.totalVisits || 1;
 
   const countTodayEl = document.getElementById('countToday');
   const countMonthEl = document.getElementById('countMonth');
