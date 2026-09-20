@@ -41,12 +41,15 @@ export const setLocale = async (lang: string) => {
   return false
 }
 
-// Auto-initialize if saved in localStorage
-if (typeof window !== 'undefined') {
-  const savedLocale = localStorage.getItem('haytool_locale')
-  if (savedLocale) {
-    setLocale(savedLocale)
+export const initLocale = async () => {
+  if (typeof window !== 'undefined') {
+    const savedLocale = localStorage.getItem('haytool_locale')
+    if (savedLocale) {
+      await setLocale(savedLocale)
+      return savedLocale
+    }
   }
+  return currentLocale
 }
 
 /**

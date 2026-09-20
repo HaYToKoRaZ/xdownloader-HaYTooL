@@ -50,7 +50,7 @@ type PatternTokenRecord = {
   localizedName: string
 }
 
-const filenameTokenRecords: ReadonlyArray<PatternTokenRecord> = [
+const getFilenameTokenRecords = (): ReadonlyArray<PatternTokenRecord> => [
   {
     localizedName: i18n('Account', 'options:general:filenameToken'),
     token: PatternToken.Account,
@@ -256,7 +256,7 @@ const FilenameControlFeature = (props: FilenameControlFeatureProps) => (
       handleTokenToggle={props.handleTokenToggle}
       handleTokenSort={props.handleTokenSort}
       previewFilename={props.previewFilename}
-      patternRecords={filenameTokenRecords}
+      patternRecords={getFilenameTokenRecords()}
     />
   </RichFeatureSwitch>
 )
@@ -373,7 +373,7 @@ const GeneralOptions = (props: GeneralOptionsProps) => {
             previewFilename={filenameSetting.makeFilename(previewMediaFile, {
               noDir: true,
             })}
-            patternRecords={filenameTokenRecords}
+            patternRecords={getFilenameTokenRecords()}
             message={formMsg.filenamePattern}
           />
           <DirectoryControlFeature

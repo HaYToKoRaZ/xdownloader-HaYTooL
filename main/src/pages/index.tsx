@@ -30,55 +30,58 @@ import Browser from 'webextension-polyfill'
 
 document.documentElement.setAttribute('lang', Browser.i18n.getUILanguage())
 
-// Create a root.
-const rootEle = document.getElementById('root')
-if (!rootEle) throw new Error('Can not find the root element.')
-const root = ReactDOMClient.createRoot(rootEle)
+import { initLocale } from '#libs/i18n'
 
-const params = new URLSearchParams(window.location.search)
-const body = document.getElementsByTagName('body')[0]
+const bootstrap = async () => {
+  await initLocale()
+  
+  // Create a root.
+  const rootEle = document.getElementById('root')
+  if (!rootEle) throw new Error('Can not find the root element.')
+  const root = ReactDOMClient.createRoot(rootEle)
 
-// Initial render: Render an element to the root.
+  const params = new URLSearchParams(window.location.search)
+  const body = document.getElementsByTagName('body')[0]
 
-switch (params.get('tab')) {
-  case 'popup':
-    root.render(
-      <React.StrictMode>
-        <ChakraProvider theme={theme}>
-          <Popup
-            featureSettingsRepo={featureSettingsRepo}
-            usageStatisticsRepo={usageStatisticsRepo}
-          />
-        </ChakraProvider>
-      </React.StrictMode>
-    )
-    break
+  switch (params.get('tab')) {
+    case 'popup':
+      root.render(
+        <React.StrictMode>
+          <ChakraProvider theme={theme}>
+            <Popup
+              featureSettingsRepo={featureSettingsRepo}
+              usageStatisticsRepo={usageStatisticsRepo}
+            />
+          </ChakraProvider>
+        </React.StrictMode>
+      )
+      break
 
-  default:
-    body.removeAttribute('style')
-    root.render(
-      <React.StrictMode>
-        <ChakraProvider theme={theme}>
-          <Options
-            clientRepo={clientRepo}
-            downloadSettingsRepo={downloadSettingsRepo}
-            featureSettingsRepo={featureSettingsRepo}
-            filenameSettingsRepo={filenameSettingsRepo}
-            searchDownloadHistory={searchDownloadHistory}
-            searchTweetIdsByHashtags={searchTweetIdsByHashtags}
-            warningSettingsRepo={warningSettingsRepo}
-            portableDownloadHistoryRepo={portableDownloadRepo}
-            downloadHistoryRepo={downloadHistoryRepo}
-            browserDownload={browserDownloadFile}
-            downloadRepo={downloadRepo}
-            checkDownloadIsOwnBySelf={checkDownloadIsOwnBySelf}
-            tweetResponseCache={tweetResponseCache}
-          />
-        </ChakraProvider>
-      </React.StrictMode>
-    )
-    break
+    default:
+      body.removeAttribute('style')
+      root.render(
+        <React.StrictMode>
+          <ChakraProvider theme={theme}>
+            <Options
+              clientRepo={clientRepo}
+              downloadSettingsRepo={downloadSettingsRepo}
+              featureSettingsRepo={featureSettingsRepo}
+              filenameSettingsRepo={filenameSettingsRepo}
+              searchDownloadHistory={searchDownloadHistory}
+              searchTweetIdsByHashtags={searchTweetIdsByHashtags}
+              warningSettingsRepo={warningSettingsRepo}
+              portableDownloadHistoryRepo={portableDownloadRepo}
+              downloadHistoryRepo={downloadHistoryRepo}
+              browserDownload={browserDownloadFile}
+              downloadRepo={downloadRepo}
+              checkDownloadIsOwnBySelf={checkDownloadIsOwnBySelf}
+              tweetResponseCache={tweetResponseCache}
+            />
+          </ChakraProvider>
+        </React.StrictMode>
+      )
+      break
+  }
 }
 
-// During an update, there's no need to pass the container again.
-// root.render(<App tab="profile" />)
+bootstrap()
