@@ -15,8 +15,8 @@ const theme = extendTheme({
   config,
   fonts: {
     heading:
-      '"Inter", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    body: '"Inter", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      '"Inter", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", Roboto, sans-serif',
+    body: '"Inter", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", Roboto, sans-serif',
   },
   colors: {
     brand: {

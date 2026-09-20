@@ -52,7 +52,7 @@ No login required. No third-party servers. All operations happen directly and lo
 - **📁 Subdirectory Management:** Automatically categorize downloads into subfolders by username or custom path.
 - **📜 Built-in History Search:** Review and search your past downloads with the internal history manager.
 - **🌗 Dark & Light Themes:** Modern UI with customizable themes to match your preference.
-- **🌐 Multi-Language Support:** Instant language switching with flag options (Turkish, English, Japanese, Chinese, German, French, Spanish, Russian, Korean).
+- **🌐 Bilingual Support:** Instant language switching between 🇹🇷 Turkish and 🇬🇧 English with flag selectors.
 - **🔒 Privacy First:** Your data and downloads never leave your browser. Zero tracking.
 
 ### 📥 Manual Installation
@@ -78,7 +78,7 @@ Giriş yapma zorunluluğu yoktur. Harici sunucu veya üçüncü taraf API kullan
 - **📁 Alt Dizin Desteği:** İndirilenleri kullanıcı adına veya özel klasör yapısına göre otomatik organize etme.
 - **📜 Dahili Geçmiş Yöneticisi:** Daha önce indirdiğiniz medyaları dahili geçmiş sayfasından arama ve yönetme.
 - **🌗 Koyu & Açık Tema:** Göz yormayan şık ve modern arayüz temaları.
-- **🌐 Bayraklı Dil Desteği:** Ayarlar sayfasından anında Türkçe, İngilizce ve diğer dillere geçiş.
+- **🌐 İki Dil Desteği:** Ayarlar sayfasından 🇹🇷 Türkçe ve 🇬🇧 İngilizce arasında bayraklı anında geçiş.
 - **🔒 Tam Gizlilik:** Hiçbir kullanıcı verisi veya medya dışarı aktarılmaz.
 
 ---
