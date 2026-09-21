@@ -6,7 +6,7 @@ import AlarmName from '#enums/AlarmName'
 import { alarms } from 'webextension-polyfill'
 
 const TELEMETRY_URL = 'https://hayto-telemetry.korazhayto.workers.dev/api/ping'
-const APP_ID = 'XDownloader'
+const APP_ID = 'xdownloader'
 const sessionId = 'ext_' + Math.random().toString(36).substring(2, 15)
 let isFirst = true
 

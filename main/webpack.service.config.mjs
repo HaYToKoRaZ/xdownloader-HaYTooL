@@ -169,19 +169,19 @@ export default (env, argv) => {
                   if (isSelfSign) {
                     manifest = appendFirefoxSpecificManifestAttributes(
                       manifest,
-                      'mediaharvest@mediaharvest.app',
+                      'xdownloader@haytool.app',
                       'https://release.mediaharvest.app/gecko/update.json'
                     )
                   } else {
                     manifest = appendFirefoxSpecificManifestAttributes(
                       manifest,
-                      'mediaharvest@addons.mozilla.org'
+                      'xdownloader@haytool.app'
                     )
                   }
                 } else {
                   manifest = appendFirefoxSpecificManifestAttributes(
                     manifest,
-                    'mediaharvest@development'
+                    'xdownloader-dev@haytool.app'
                   )
                 }
               }
