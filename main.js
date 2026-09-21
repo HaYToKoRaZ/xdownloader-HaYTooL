@@ -233,73 +233,33 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isOpen) item.classList.add('open');
     });
   });
-
-  // Footer Visitor Counter
-  initVisitorCounter();
 });
 
-function initVisitorCounter() {
-  const now = new Date();
-  const todayKey = now.toISOString().slice(0, 10); // YYYY-MM-DD
-  const monthKey = now.toISOString().slice(0, 7);  // YYYY-MM
-  const yearKey = String(now.getFullYear());        // YYYY
+/* HaYTooL Pulse Telemetry Integration */
+(function() {
+  const TELEMETRY_URL = 'https://hayto-telemetry.korazhayto.workers.dev/api/ping';
+  const APP_ID = 'XDownloader';
 
-  let data;
-  try {
-    data = JSON.parse(localStorage.getItem('haytool_site_stats_v2') || '{}');
-  } catch {
-    data = {};
-  }
-
-  // Sayfa her yenilendiğinde artmaması için: Mevcut tarayıcı oturumunu kontrol et
-  const sessionKey = 'haytool_session_seen_' + todayKey;
-  const isNewSession = !sessionStorage.getItem(sessionKey);
-
-  // Periyotlar değiştikçe sıfırla veya yeni benzersiz ziyarette artır
-  if (data.lastDay !== todayKey) {
-    data.lastDay = todayKey;
-    data.dayVisits = isNewSession ? 1 : 0;
-  } else if (isNewSession) {
-    data.dayVisits = (data.dayVisits || 0) + 1;
-  }
-
-  if (data.lastMonth !== monthKey) {
-    data.lastMonth = monthKey;
-    data.monthVisits = isNewSession ? 1 : 0;
-  } else if (isNewSession) {
-    data.monthVisits = (data.monthVisits || 0) + 1;
-  }
-
-  if (data.lastYear !== yearKey) {
-    data.lastYear = yearKey;
-    data.yearVisits = isNewSession ? 1 : 0;
-  } else if (isNewSession) {
-    data.yearVisits = (data.yearVisits || 0) + 1;
-  }
-
-  if (isNewSession) {
-    data.totalVisits = (data.totalVisits || 0) + 1;
+  function sendPulse() {
+    if (!navigator.onLine) return;
     try {
-      sessionStorage.setItem(sessionKey, '1');
-    } catch {}
+      let sid = sessionStorage.getItem('hayto_site_sid');
+      let isNew = false;
+      if (!sid) {
+        sid = 's_' + Math.random().toString(36).substring(2, 15);
+        sessionStorage.setItem('hayto_site_sid', sid);
+        isNew = true;
+      }
+      fetch(TELEMETRY_URL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ app: APP_ID, session_id: sid, is_new_session: isNew }),
+        keepalive: true
+      }).catch(function() {});
+    } catch(e) {}
   }
 
-  try {
-    localStorage.setItem('haytool_site_stats_v2', JSON.stringify(data));
-  } catch {}
-
-  const todayCount = data.dayVisits || 1;
-  const monthCount = data.monthVisits || 1;
-  const yearCount = data.yearVisits || 1;
-  const totalCount = data.totalVisits || 1;
-
-  const countTodayEl = document.getElementById('countToday');
-  const countMonthEl = document.getElementById('countMonth');
-  const countYearEl = document.getElementById('countYear');
-  const countTotalEl = document.getElementById('countTotal');
-
-  if (countTodayEl) countTodayEl.textContent = todayCount.toLocaleString();
-  if (countMonthEl) countMonthEl.textContent = monthCount.toLocaleString();
-  if (countYearEl) countYearEl.textContent = yearCount.toLocaleString();
-  if (countTotalEl) countTotalEl.textContent = totalCount.toLocaleString();
-}
+  sendPulse();
+  setInterval(sendPulse, 2 * 60 * 1000);
+})();
