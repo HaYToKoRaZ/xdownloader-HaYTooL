@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* HaYTooL Pulse Telemetry Integration */
 (function() {
   const TELEMETRY_URL = 'https://hayto-telemetry.korazhayto.workers.dev/api/ping';
-  const APP_ID = 'XDownloader Sitesi';
+  const APP_ID = 'web_xdownloader';
 
   function sendPulse() {
     if (!navigator.onLine) return;
