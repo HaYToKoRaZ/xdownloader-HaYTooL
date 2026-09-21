@@ -154,10 +154,8 @@ export default (env, argv) => {
                 manifest = appendDevelopmentManifestAttributes(manifest)
               }
 
-              if (isChrome && isProduction) {
-                manifest['key'] = PublicKey.chrome
-              }
-
+              // Chrome Web Store ve Edge Partner Center, ZIP içindeki manifestte 'key' alanını reddeder.
+              // Sadece geliştirme modunda ihtiyaç varsa eklenir.
               if (isEdge && !isProduction) {
                 manifest['key'] = PublicKey.edge
               }

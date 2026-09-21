@@ -669,4 +669,8 @@ msgctxt "popup"
 msgid "Website"
 msgstr "Web Sitesi"
 
+msgctxt "options"
+msgid "Active Users:"
+msgstr "Aktif Kullanıcı:"
+
 

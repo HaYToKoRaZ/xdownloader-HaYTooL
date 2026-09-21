@@ -671,4 +671,8 @@ msgctxt "popup"
 msgid "Website"
 msgstr "Website"
 
+msgctxt "options"
+msgid "Active Users:"
+msgstr "Active Users:"
+
 

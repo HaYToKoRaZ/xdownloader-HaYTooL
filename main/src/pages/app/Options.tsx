@@ -13,6 +13,7 @@ import type { FilenameSetting } from '#domain/valueObjects/filenameSetting'
 import { getText as i18n } from '#libs/i18n'
 import About from '#pages/components/About'
 import FeatureOptions from '#pages/components/FeatureOptions'
+import FootBar from '#pages/components/FootBar'
 import GeneralOptions from '#pages/components/GeneralOptions'
 import HistoryTable from '#pages/components/History'
 import IntegrationOptions from '#pages/components/IntegrationOptions'
@@ -263,6 +264,7 @@ const App = ({
             </TabPanels>
           </Tabs>
         </Container>
+        <FootBar />
       </Box>
     </Stack>
   )
