@@ -16,6 +16,7 @@ import handleNotificationClosed from './handlers/handleNotificationClosed'
 import handleRuntimeInstalled from './handlers/handleRuntimeInstalled'
 import initEventPublisher from './initEventPublisher'
 import { initMessageRouter } from './initMessageRouter'
+import { initTelemetry } from './initTelemetry'
 import { getMessageRouter } from './messageRouter'
 import Browser, { alarms } from 'webextension-polyfill'
 
@@ -79,4 +80,7 @@ Browser.contextMenus?.onClicked?.addListener((info) => {
     Browser.tabs.create({ url: Browser.runtime.getURL('index.html?section=history#history') })
   }
 })
+
+initTelemetry()
+
 

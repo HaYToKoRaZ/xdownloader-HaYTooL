@@ -6,6 +6,7 @@
 
 const enum AlarmName {
   EvictTweetCache = 'evict-tweet-cache',
+  PulseTelemetry = 'pulse-telemetry',
 }
 
 export default AlarmName

@@ -1,6 +1,6 @@
 {
   "name": "xdownloader-haytool",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "type": "module",
   "description": "XDownloader HaYTooL - The easiest way to get media from X (Twitter) timeline.",
   "engines": {
