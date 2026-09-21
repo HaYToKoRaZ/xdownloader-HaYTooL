@@ -18,6 +18,7 @@ import initEventPublisher from './initEventPublisher'
 import { initMessageRouter } from './initMessageRouter'
 import { initTelemetry } from './initTelemetry'
 import { getMessageRouter } from './messageRouter'
+import { updateContextMenus } from './setupContextMenus'
 import Browser, { alarms } from 'webextension-polyfill'
 
 initMonitor({
@@ -58,6 +59,12 @@ Browser.notifications.onButtonClicked.addListener(
   handleNotificationButtonClicked(eventPublisher)
 )
 
+Browser.storage.onChanged.addListener((changes, areaName) => {
+  if (areaName === 'local' && changes.haytool_locale) {
+    updateContextMenus(changes.haytool_locale.newValue as string)
+  }
+})
+
 alarms.create(AlarmName.EvictTweetCache, {
   periodInMinutes: __DEV__ ? 5 : 1440,
 })
@@ -72,7 +79,9 @@ alarms.onAlarm.addListener(async alarm => {
 })
 
 Browser.contextMenus?.onClicked?.addListener((info) => {
-  if (info.menuItemId === 'open-official-website') {
+  if (info.menuItemId === 'open-portal') {
+    Browser.tabs.create({ url: 'https://haytokoraz.github.io/' })
+  } else if (info.menuItemId === 'open-official-website') {
     Browser.tabs.create({ url: 'https://haytokoraz.github.io/xdownloader-HaYTooL/' })
   } else if (info.menuItemId === 'open-author-x') {
     Browser.tabs.create({ url: 'https://x.com/HaYTo' })
