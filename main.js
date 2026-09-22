@@ -235,22 +235,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* HaYTooL Pulse Telemetry Integration */
+/* HaYTooL Pulse (Daily Unique Visitor) */
 (function() {
-  const TELEMETRY_URL = 'https://hayto-telemetry.korazhayto.workers.dev/api/ping';
+  const PING_URL = 'https://hayto-telemetry.korazhayto.workers.dev/api/ping';
   const APP_ID = 'web_xdownloader';
 
   function sendPulse() {
     if (!navigator.onLine) return;
     try {
-      let sid = sessionStorage.getItem('hayto_site_sid');
+      const todayStr = new Date().toISOString().slice(0, 10);
+      let sid = localStorage.getItem('hayto_site_sid');
+      const lastDate = localStorage.getItem('hayto_site_last_date');
+
       let isNew = false;
       if (!sid) {
         sid = 's_' + Math.random().toString(36).substring(2, 15);
-        sessionStorage.setItem('hayto_site_sid', sid);
-        isNew = true;
+        localStorage.setItem('hayto_site_sid', sid);
       }
-      fetch(TELEMETRY_URL, {
+      if (lastDate !== todayStr) {
+        isNew = true;
+        localStorage.setItem('hayto_site_last_date', todayStr);
+      }
+
+      fetch(PING_URL, {
         method: 'POST',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
