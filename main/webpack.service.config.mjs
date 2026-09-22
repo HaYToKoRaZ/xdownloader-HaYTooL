@@ -67,6 +67,9 @@ const appendFirefoxSpecificManifestAttributes = (
         gecko: {
           id: addOnId,
           strict_min_version: `${minFirefoxVersion.major}.${minFirefoxVersion.minor}`,
+          data_collection_permissions: {
+            required: ['none'],
+          },
           ...(updateUrl ? { update_url: updateUrl } : {}),
         },
       },
