@@ -20,13 +20,13 @@
 
 ### 🛒 Supported Browsers & Store Downloads
 <p align="center">
-  <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" title="Chrome Web Store">
+  <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" title="Chrome Web Store">
     <img src="assets/badges/chrome.svg" alt="Chrome Web Store" width="40" height="40" style="margin: 0 10px;" />
   </a>
-  <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" title="Microsoft Edge Add-ons">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/xdownloader-haytool/ehpcnkiobcjfgnepikdmempghdonipkb" title="Microsoft Edge Add-ons">
     <img src="assets/badges/edge.svg" alt="Microsoft Edge" width="40" height="40" style="margin: 0 10px;" />
   </a>
-  <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" title="Helium Browser">
+  <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" title="Helium Browser">
     <img src="assets/badges/helium.png" alt="Helium Browser" width="40" height="40" style="margin: 0 10px;" />
   </a>
 </p>

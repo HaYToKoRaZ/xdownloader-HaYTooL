@@ -13,11 +13,11 @@ msgstr ""
 
 msgctxt "app"
 msgid "appDesc"
-msgstr "Twitter veya TweetDeck'teki video ve resimleri tek tıkla indirin."
+msgstr "X platformundaki medya içeriklerini kolayca görüntüleyin ve arşivleyin."
 
 msgctxt "app"
 msgid "appName"
-msgstr "XDownloader HaYTooL : X (Twitter) Medya İndirici"
+msgstr "XDownloader HaYTooL"
 
 #: src/pages/hooks/useExtensionConflictDiagnostic.ts:308
 msgctxt "hook:useExtensionConflictDiagnostic"
