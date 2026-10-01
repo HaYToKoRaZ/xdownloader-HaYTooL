@@ -47,8 +47,8 @@ const translations = {
     faq1A: 'Chrome, Chromium tabanlı tüm tarayıcılar (Edge, Brave, Opera, Helium vb.) ve WebExtension API destekleyen tarayıcılarla uyumludur.',
     faq2Q: 'Verilerimi topluyor mu?',
     faq2A: 'Hayır. XDownloader HaYTooL hiçbir kişisel bilginizi, indirme geçmişinizi veya X hesap bilgilerinizi kayıt altına almaz ya da herhangi bir sunucuya göndermez.',
-    faq3Q: 'Neden mağazada yok?',
-    faq3A: 'Chrome Web Store ve Edge Add-ons mağaza onay süreçleri devam etmektedir. Bu süreçte GitHub\'dan manuel kurulum yapabilirsiniz.',
+    faq3Q: 'Mağazalardan nasıl indirebilirim?',
+    faq3A: 'Yukarıdaki Chrome Web Store ve Microsoft Edge Add-ons butonlarına tıklayarak doğrudan resmi mağazalardan tek tıkla kurabilirsiniz.',
     faq4Q: 'Ücretsiz mi?',
     faq4A: 'Evet, tamamen ücretsiz ve açık kaynaklıdır. MIT lisansı altında dağıtılmaktadır.',
     // Privacy page
@@ -119,8 +119,8 @@ const translations = {
     faq1A: 'Compatible with Chrome, all Chromium-based browsers (Edge, Brave, Opera, Helium, etc.) and any browser that supports the WebExtension API.',
     faq2Q: 'Does it collect my data?',
     faq2A: 'No. XDownloader HaYTooL does not record or send any of your personal data, download history, or X account information to any server.',
-    faq3Q: 'Why isn\'t it in the store?',
-    faq3A: 'The Chrome Web Store and Edge Add-ons review processes are ongoing. In the meantime, you can install it manually from GitHub.',
+    faq3Q: 'How can I install from official stores?',
+    faq3A: 'You can install it with a single click directly from official stores using the Chrome Web Store and Microsoft Edge Add-ons badges above.',
     faq4Q: 'Is it free?',
     faq4A: 'Yes, completely free and open source. Distributed under the MIT license.',
     // Privacy page
