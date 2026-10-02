@@ -7,12 +7,15 @@
 **Lightning Fast Media Downloader for X (Twitter)**  
 *X (Twitter) İçin Işık Hızında Medya İndirici*
 
-[![GitHub Release](https://img.shields.io/github/v/release/HaYToKoRaZ/xdownloader-HaYTooL?color=38bdf8&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest)
-[![Latest Release Downloads](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/latest/total?color=success&label=Latest%20Release%20Downloads)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest)
-[![Total Downloads](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?color=2ea44f&label=Total%20Downloads)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases)](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?color=0284c7&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases)
-[![Stars](https://img.shields.io/github/stars/HaYToKoRaZ/xdownloader-HaYTooL?color=eab308&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/stargazers)
-[![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-emerald?style=flat-square)](LICENSE)
-[![Manifest V3](https://img.shields.io/badge/Manifest-V3-orange?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+<p align="center">
+  <img src="assets/badges/status.svg" alt="Status" />
+  <img src="assets/badges/version.svg" alt="Version" />
+  <img src="assets/badges/license.svg" alt="License" />
+  <img src="assets/badges/manifest.svg" alt="Manifest V3" />
+  <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest"><img src="https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/latest/total?style=for-the-badge&logo=github&color=2ea44f&label=LATEST%20DOWNLOADS" alt="Latest Release Downloads" /></a>
+  <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases"><img src="https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?style=for-the-badge&logo=github&color=0969da&label=TOTAL%20DOWNLOADS" alt="Total Downloads" /></a>
+  <a href="https://haytokoraz.github.io/" target="_blank"><img src="assets/badges/portal.svg" alt="HaYTooL PoRTaL" /></a>
+</p>](https://developer.chrome.com/docs/extensions/mv3/intro/)
 
 [🌐 **Live Website (Canlı Web Sitesi)**](https://haytokoraz.github.io/xdownloader-HaYTooL/) | [📦 **Download Latest Release (Son Sürüm)**](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest) | [🇹🇷 **Türkçe Açıklama**](#-türkçe-açıklama)
 
