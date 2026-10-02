@@ -15,7 +15,7 @@
   <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest"><img src="https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/latest/total?style=for-the-badge&logo=github&color=2ea44f&label=LATEST%20DOWNLOADS" alt="Latest Release Downloads" /></a>
   <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases"><img src="https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?style=for-the-badge&logo=github&color=0969da&label=TOTAL%20DOWNLOADS" alt="Total Downloads" /></a>
   <a href="https://haytokoraz.github.io/" target="_blank"><img src="assets/badges/portal.svg" alt="HaYTooL PoRTaL" /></a>
-</p>](https://developer.chrome.com/docs/extensions/mv3/intro/)
+</p>
 
 [🌐 **Live Website (Canlı Web Sitesi)**](https://haytokoraz.github.io/xdownloader-HaYTooL/) | [📦 **Download Latest Release (Son Sürüm)**](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest) | [🇹🇷 **Türkçe Açıklama**](#-türkçe-açıklama)
 
