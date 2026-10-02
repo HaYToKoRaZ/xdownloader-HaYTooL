@@ -8,8 +8,8 @@
 *X (Twitter) İçin Işık Hızında Medya İndirici*
 
 [![GitHub Release](https://img.shields.io/github/v/release/HaYToKoRaZ/xdownloader-HaYTooL?color=38bdf8&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest)
-[![GitHub Downloads (latest release)](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/latest/total?color=10b981&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest)
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?color=0284c7&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases)
+[![Latest Release Downloads](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/latest/total?color=success&label=Latest%20Release%20Downloads)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest)
+[![Total Downloads](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?color=2ea44f&label=Total%20Downloads)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases)](https://img.shields.io/github/downloads/HaYToKoRaZ/xdownloader-HaYTooL/total?color=0284c7&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases)
 [![Stars](https://img.shields.io/github/stars/HaYToKoRaZ/xdownloader-HaYTooL?color=eab308&style=flat-square&logo=github)](https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/stargazers)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-emerald?style=flat-square)](LICENSE)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-orange?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/intro/)
