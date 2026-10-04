@@ -758,7 +758,7 @@ const HistoryTable = ({
         whiteSpace={'break-spaces'}
         overflowY={'auto'}
       >
-        <Table variant="striped" colorScheme="teal" size={'md'} width={'100%'}>
+        <Table variant="striped" colorScheme="purple" size={'md'} width={'100%'}>
           <Thead position={'sticky'} top={0} zIndex={1} background={'black'}>
             <TableHeads />
           </Thead>

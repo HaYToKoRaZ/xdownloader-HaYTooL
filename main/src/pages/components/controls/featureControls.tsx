@@ -56,7 +56,7 @@ export const FeatureSwitch = ({
         id={controlId}
         isChecked={isOn}
         onChange={handleChange}
-        colorScheme="cyan"
+        colorScheme="purple"
         size="md"
         mb={switchMb}
         data-testid="feature-switch"
@@ -151,7 +151,7 @@ export const RichFeatureSwitch = ({
                 id={id}
                 isChecked={isOn}
                 onChange={handleClick}
-                colorScheme={'cyan'}
+                colorScheme={'purple'}
                 size={'md'}
                 data-testid="feature-switch"
               />

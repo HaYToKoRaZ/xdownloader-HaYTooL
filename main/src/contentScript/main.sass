@@ -56,6 +56,19 @@ $harvest-yellow: rgb(241, 185, 26)
   display: flex
   order: 10 !important
   cursor: pointer
+  transition: transform 200ms ease
+  &:hover
+    transform: scale(1.08)
+  &:active
+    transform: scale(0.94)
+  &:focus-visible
+    outline: 2px solid $harvest-yellow
+    outline-offset: 2px
+    border-radius: 9999px
+  @media (prefers-reduced-motion: reduce)
+    transition: none
+    &:hover, &:active
+      transform: none
   -webkit-box-pack: start
   justify-content: flex-start
   -webkit-box-direction: normal

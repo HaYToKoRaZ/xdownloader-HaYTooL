@@ -63,11 +63,16 @@ const SectionCard = ({ title, children }: SectionCardProps) => {
   return (
     <Card
       variant="outline"
-      borderRadius="xl"
+      borderRadius="2xl"
       shadow="sm"
       borderWidth="1px"
+      borderColor="rgba(255, 255, 255, 0.08)"
+      bg="white"
+      _dark={{ bg: 'brand.card' }}
       overflow="hidden"
       mb={6}
+      transition="all 200ms ease"
+      _hover={{ borderColor: 'rgba(124, 58, 237, 0.5)', shadow: 'lg' }}
     >
       <CardHeader pb={2}>
         <Heading size="md" fontWeight="600">
@@ -138,7 +143,9 @@ const App = ({
         px={8}
         py={3}
         borderBottomWidth="1px"
-        bg={colorMode === 'light' ? 'white' : 'gray.800'}
+        borderColor="rgba(255, 255, 255, 0.08)"
+        bg={colorMode === 'light' ? 'whiteAlpha.900' : 'rgba(15, 23, 42, 0.8)'}
+        backdropFilter="blur(12px)"
         position="sticky"
         top={0}
         zIndex={10}
@@ -149,7 +156,7 @@ const App = ({
             <Link
               href={Links.website}
               isExternal
-              _hover={{ textDecoration: 'none', color: 'cyan.500' }}
+              _hover={{ textDecoration: 'none', color: '#A78BFA' }}
               cursor="pointer"
             >
               <Heading size="md" letterSpacing="wide">
@@ -212,10 +219,10 @@ const App = ({
       {/* Main Content Area */}
       <Box flex={1} overflowY="auto">
         <Container maxW="1100px" py={8} px={6}>
-          <Tabs variant="enclosed" colorScheme="cyan" isLazy defaultIndex={initialTabIndex}>
-            <TabList mb={6} borderBottomWidth="2px">
-              <Tab fontWeight="600">{i18n('General', 'options:sideMenu')}</Tab>
-              <Tab fontWeight="600">{i18n('History', 'options:sideMenu')}</Tab>
+          <Tabs variant="soft-rounded" colorScheme="purple" isLazy defaultIndex={initialTabIndex}>
+            <TabList mb={6} gap={2}>
+              <Tab fontWeight="600" transition="all 200ms ease">{i18n('General', 'options:sideMenu')}</Tab>
+              <Tab fontWeight="600" transition="all 200ms ease">{i18n('History', 'options:sideMenu')}</Tab>
             </TabList>
 
             <TabPanels>

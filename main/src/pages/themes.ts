@@ -48,11 +48,47 @@ const theme = extendTheme({
         800: '#bc2975',
         900: '#bc2975',
       },
-      bg: '#1E1E1E',
+      bg: '#0F172A',
+      card: '#1E293B',
+      primary: '#2563EB',
+      accent: '#10B981',
     },
     token: {
       default: 'white',
-      active: '#5AEDD2',
+      active: '#38BDF8',
+    },
+  },
+  shadows: {
+    outline: '0 0 0 3px rgba(37, 99, 235, 0.5)',
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        borderRadius: 'lg',
+        fontWeight: 600,
+        cursor: 'pointer',
+        transition: 'all 200ms ease',
+        _focusVisible: { boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.5)' },
+        _active: { transform: 'scale(0.97)' },
+      },
+    },
+    IconButton: {
+      baseStyle: {
+        borderRadius: 'lg',
+        cursor: 'pointer',
+        transition: 'all 200ms ease',
+        _focusVisible: { boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.5)' },
+        _active: { transform: 'scale(0.92)' },
+      },
+    },
+    Switch: {
+      baseStyle: {
+        track: {
+          transition: 'all 200ms ease',
+          _checked: { bg: '#2563EB' },
+          _focusVisible: { boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.5)' },
+        },
+      },
     },
   },
   styles: {
@@ -61,15 +97,25 @@ const theme = extendTheme({
         height: '100%',
       },
       body: {
-        bg: props.colorMode === 'dark' ? '#1E1E1E' : 'inherit',
-        color: props.colorMode === 'dark' ? 'white' : 'inherit',
+        bg: props.colorMode === 'dark' ? '#0F172A' : '#F8FAFC',
+        color: props.colorMode === 'dark' ? '#F8FAFC' : '#0F172A',
         height: '100%',
         overflowY: 'auto',
+        lineHeight: 1.5,
       },
       '#root': {
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
+      },
+      'button, [role="button"], a, label': {
+        cursor: 'pointer',
+      },
+      '@media (prefers-reduced-motion: reduce)': {
+        '*, *::before, *::after': {
+          animationDuration: '0.01ms !important',
+          transitionDuration: '0.01ms !important',
+        },
       },
     }),
   },

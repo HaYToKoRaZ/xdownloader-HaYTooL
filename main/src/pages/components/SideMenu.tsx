@@ -163,7 +163,7 @@ const SideMenu = () => {
       >
         <Box p="1.5rem 1.5rem 0.5rem 1.5rem">
           <HStack justify="space-between" align="center">
-            <Text fontSize="1.1rem" fontWeight="bold" color="cyan.400">
+            <Text fontSize="1.1rem" fontWeight="bold" color="#A78BFA">
               XDownloader
             </Text>
             <IconButton

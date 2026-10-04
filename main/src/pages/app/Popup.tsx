@@ -53,7 +53,7 @@ const NavBar = () => {
           alt="XDownloader"
           borderRadius="4px"
         />
-        <Text fontSize="0.95rem" fontWeight="bold" color="cyan.400" letterSpacing="wide">
+        <Text fontSize="0.95rem" fontWeight="bold" color="#A78BFA" letterSpacing="wide">
           XDownloader
         </Text>
       </HStack>
@@ -136,7 +136,7 @@ const Stats = (props: StatsProps) => {
   return (
     <Box py={1}>
       <Center>
-        <Text as="span" fontSize={'2.75rem'} fontWeight={700} lineHeight="none" color="cyan.400">
+        <Text as="span" fontSize={'2.75rem'} fontWeight={700} lineHeight="none" color="#A78BFA">
           {stats.mapBy(props => props.downloadCount)}
         </Text>
       </Center>
@@ -193,7 +193,7 @@ const Footer = () => {
 
   return (
     <Flex
-      bg="#252525"
+      bg="#192134"
       borderTop="1px solid rgba(255, 255, 255, 0.08)"
       bottom="0"
       w="100%"
@@ -208,7 +208,7 @@ const Footer = () => {
         color="gray.400"
         fontWeight="medium"
         cursor="pointer"
-        _hover={{ color: 'cyan.300', textDecoration: 'underline' }}
+        _hover={{ color: '#C4B5FD', textDecoration: 'underline' }}
         onClick={() => tabs.create({ active: true, url: Links.website })}
         title={Links.website}
       >
