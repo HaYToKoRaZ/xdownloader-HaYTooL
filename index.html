@@ -3,201 +3,372 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XDownloader HaYTooL - X (Twitter) Medya İndirici</title>
-  <meta name="description" content="X (Twitter) videolarını, resimlerini ve GIF'lerini en yüksek kalitede tek tıkla indirin." />
+  <title>XDownloader HaYTooL | Kedi Nir ile X (Twitter) Medya İndirici</title>
+  <meta name="description" content="Kedi Nir rehberliğinde X (Twitter) videolarını, fotoğraflarını ve GIF'lerini tek tıkla en yüksek kalitede bilgisayarına indir. Reklamsız, güvenli, açık kaynak ve ücretsiz." />
+  <meta name="keywords" content="x video indir, twitter video indir, x downloader, twitter media downloader, x resim indir, kedi nir, haytool, chrome eklentisi, edge eklentisi, 4k video indirici" />
+  <meta name="author" content="HaYToKoRaZ" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Arama Motoru Doğrulamaları (Google, Bing / IndexNow, DuckDuckGo) -->
   <meta name="google-site-verification" content="xypAzyBOt0SPosmuL-WZka9vBStyhg9HJcCLADLP2og" />
+  <meta name="msvalidate.01" content="4D72A3DE8EB8C3BC1C54C111306EF3A2" />
+  
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://haytokoraz.github.io/xdownloader-HaYTooL/" />
+  <link rel="alternate" hreflang="tr" href="https://haytokoraz.github.io/xdownloader-HaYTooL/" />
+  <link rel="alternate" hreflang="en" href="https://haytokoraz.github.io/xdownloader-HaYTooL/" />
+  <link rel="alternate" hreflang="x-default" href="https://haytokoraz.github.io/xdownloader-HaYTooL/" />
+  
+  <!-- Open Graph / Facebook / DuckDuckGo / Bing Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="XDownloader HaYTooL" />
+  <meta property="og:title" content="XDownloader HaYTooL | Kedi Nir ile X (Twitter) Medya İndirici" />
+  <meta property="og:description" content="Kedi Nir gösteriyor: X (Twitter) videolarını orijinal kalitesinde tek tıkla indir. Sıfır veri takibi, tam kontrol." />
+  <meta property="og:url" content="https://haytokoraz.github.io/xdownloader-HaYTooL/" />
+  <meta property="og:image" content="https://haytokoraz.github.io/xdownloader-HaYTooL/assets/cat_mascot.jpg" />
+  <meta property="og:image:alt" content="Kedi Nir bilgisayar başında medya indiriyor" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="XDownloader HaYTooL | Kedi Nir ile X Medya İndirici" />
+  <meta name="twitter:description" content="Kedi Nir ile X videolarını ve fotoğraflarını tek tıkla en yüksek kalitede indirin." />
+  <meta name="twitter:image" content="https://haytokoraz.github.io/xdownloader-HaYTooL/assets/cat_mascot.jpg" />
+  <meta name="twitter:site" content="@HaYTo" />
+  <meta name="twitter:creator" content="@HaYTo" />
+  
   <link rel="icon" type="image/png" href="assets/icon128.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="glow-bg"></div>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="assets/icon128.png" alt="XDownloader HaYTooL" class="logo-img" />
-        <span class="logo-text">XDownloader <span class="gradient-text">HaYTooL</span></span>
-      </div>
-      <div class="nav-actions">
-        <!-- Dil Seçici (Bayraklı) -->
-        <div class="lang-picker">
-          <button id="langBtn" class="pill-btn" aria-label="Dil Değiştir">
-            <img id="langFlag" src="assets/flags/tr.svg" width="22" height="16" alt="TR" class="lang-flag-img">
-            <span id="langLabel">TR</span>
+  <link rel="stylesheet" href="tailwind.css" />
+  
+  <!-- Structured Data / JSON-LD (Google, Bing, DuckDuckGo) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "XDownloader HaYTooL",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chromium, Chrome, Microsoft Edge, Brave, Opera, Helium",
+        "description": "Maskot Kedi Nir rehberliğinde X (Twitter) medya indirme tarayıcı uzantısı. 1080p / 4K video ve fotoğraf desteği.",
+        "url": "https://haytokoraz.github.io/xdownloader-HaYTooL/",
+        "image": "https://haytokoraz.github.io/xdownloader-HaYTooL/assets/cat_mascot.jpg",
+        "license": "https://opensource.org/licenses/MIT",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": { "@type": "Person", "name": "HaYToKoRaZ", "url": "https://github.com/HaYToKoRaZ" }
+      },
+      {
+        "@type": "WebSite",
+        "name": "XDownloader HaYTooL",
+        "url": "https://haytokoraz.github.io/xdownloader-HaYTooL/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://haytokoraz.github.io/xdownloader-HaYTooL/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kedi Nir bu eklentiyle nasıl indiriyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tweetlerin altına otomatik yerleşen şık indirme butonuna tek bir dokunuşla en yüksek çözünürlüğü seçip anında cihazınıza indirir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Verilerim güvende mi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet, Kedi Nir gizliliğe önem verir! Eklenti hiçbir sunucuya veri göndermez, reklam veya izleyici içermez."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hangi tarayıcılarda çalışır?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google Chrome, Microsoft Edge, Brave, Opera ve Helium Browser başta olmak üzere tüm Chromium tabanlı tarayıcılarda resmi mağazalardan kurulabilir."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between selection:bg-blue-500/30 selection:text-blue-200">
+  <div class="glow-atmosphere" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="site-container flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3 no-underline text-inherit group">
+        <div class="relative">
+          <img src="assets/icon128.png" alt="XDownloader HaYTooL" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-200" />
+          <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+        </div>
+        <span class="font-bold text-lg tracking-tight flex items-center gap-2">
+          XDownloader <span class="text-blue-500 font-semibold text-xs px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">Nir Edition</span>
+        </span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <!-- Dil Seçici -->
+        <div class="relative">
+          <button id="langBtn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-700/50 bg-slate-800/40 hover:bg-slate-800/80 transition text-sm cursor-pointer" aria-label="Dili Değiştir">
+            <img id="langFlag" src="assets/flags/tr.svg" width="20" height="14" alt="TR" class="rounded-sm" />
+            <span id="langLabel" class="font-medium text-xs">TR</span>
           </button>
-          <div id="langDropdown" class="lang-dropdown hidden">
-            <div class="lang-item" data-lang="tr"><img src="assets/flags/tr.svg" width="20" height="14" alt="TR" class="lang-flag-img"> Türkçe</div>
-            <div class="lang-item" data-lang="en"><img src="assets/flags/en.svg" width="20" height="14" alt="EN" class="lang-flag-img"> English</div>
+          <div id="langDropdown" class="hidden absolute right-0 mt-2 w-32 glass-panel p-1.5 shadow-xl z-50 flex flex-col gap-1">
+            <button class="lang-item flex items-center gap-2.5 w-full px-2.5 py-1.5 rounded text-left text-xs hover:bg-blue-500/10 transition cursor-pointer" data-lang="tr">
+              <img src="assets/flags/tr.svg" width="18" height="13" alt="TR" class="rounded-sm" /> Türkçe
+            </button>
+            <button class="lang-item flex items-center gap-2.5 w-full px-2.5 py-1.5 rounded text-left text-xs hover:bg-blue-500/10 transition cursor-pointer" data-lang="en">
+              <img src="assets/flags/en.svg" width="18" height="13" alt="EN" class="rounded-sm" /> English
+            </button>
           </div>
         </div>
 
         <!-- Tema Değiştirici -->
-        <button id="themeToggle" class="pill-btn icon-only" aria-label="Tema Değiştir" title="Karanlık / Aydınlık Tema">
+        <button id="themeToggle" class="p-2 rounded-lg border border-slate-700/50 bg-slate-800/40 hover:bg-slate-800/80 transition cursor-pointer" aria-label="Tema Değiştir" title="Açık / Koyu Tema">
           <span id="themeIcon">☀️</span>
         </button>
 
-        <a href="https://haytokoraz.github.io/" class="portal-link" target="_blank" rel="noopener">HaYTooL Portal ↗</a>
+        <a href="https://haytokoraz.github.io/" class="hidden sm:inline-flex text-xs font-medium text-slate-400 hover:text-blue-400 transition" target="_blank" rel="noopener">
+          Portal ↗
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="hero">
-    <div class="container">
-      <div class="badge" data-i18n="badge">✨ Gelişmiş X (Twitter) Medya İndirici</div>
-      <h1 class="hero-title">
-        <span data-i18n="title1">X / Twitter Medyalarını</span><br />
-        <span class="gradient-text" data-i18n="title2">Tek Tıkla En Yüksek Kalitede İndirin</span>
-      </h1>
-      <p class="hero-desc" data-i18n="desc">
-        Videolar, fotoğraflar ve animasyonlu GIF'ler... Orijinal çözünürlüklerinde, anında ve güvenli bir şekilde bilgisayarınıza kaydedin. Tamamen yerel, reklamsız ve hızlı.
-      </p>
+  <!-- Hero: Kedi Nir -->
+  <main class="relative z-10 flex-1">
+    <section class="site-container pt-10 pb-16">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+        
+        <!-- Sol: Bilgi & İndirme -->
+        <div class="lg:col-span-7 text-left">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-6">
+            <span class="text-base">🐾</span>
+            <span data-i18n="badge">Kedi Nir'in Resmi İndiricisi</span>
+          </div>
 
-      <div class="hero-mascot-container">
-        <div class="mascot-frame">
-          <img src="assets/cat_mascot.jpg" alt="Cat Developer using computer" class="hero-cat-img" />
-          <div class="mascot-badge">🐱 <span data-i18n="mascotBadge">Powered by HaYTooL</span></div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] mb-6">
+            <span data-i18n="title1">X Medyalarını</span><br />
+            <span class="bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500 bg-clip-text text-transparent" data-i18n="title2">Kedi Nir'in Hızıyla Yakala</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-400 mb-8 max-w-xl leading-relaxed font-normal" data-i18n="desc">
+            Kedi Nir tweet'in kokusunu alır, videoyu 4K çözer, fotoğrafı kayıpsız çeker! Tek dokunuşla cihazına kaydet. Reklam yok, bekleme yok, sıfır veri takibi.
+          </p>
+
+          <!-- İndirme & GitHub Butonları -->
+          <div class="flex flex-wrap items-center gap-4 mb-8">
+            <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" class="btn-primary-action" target="_blank" rel="noopener">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              <span data-i18n="btnInstallChrome">Chrome'a Ekle (Ücretsiz)</span>
+            </a>
+            <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" class="btn-secondary-action" target="_blank" rel="noopener">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <span>GitHub Kaynak Kodu</span>
+            </a>
+          </div>
+
+          <!-- Nir İpucu -->
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs text-blue-300">
+            <span class="text-xl">💡</span>
+            <div data-i18n="nirTip">Nir'in Notu: Eklentiyi kurduktan sonra X'te her tweet'in altında otomatik mavi indirme butonu belirecek!</div>
+          </div>
         </div>
+
+        <!-- Sağ: Maskot Nir ve Canlı İndirme Simülasyonu -->
+        <div class="lg:col-span-5 relative">
+          <div class="glass-panel p-4 rounded-3xl relative overflow-hidden shadow-2xl border-blue-500/30 group">
+            
+            <div class="relative rounded-2xl overflow-hidden mb-4 bg-slate-950">
+              <img src="assets/cat_mascot.jpg" alt="Maskot Kedi Nir bilgisayar başında indirme yapıyor" width="460" height="460" class="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" fetchpriority="high" />
+              
+              <!-- Nir Durum Rozeti -->
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-blue-300 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span data-i18n="nirOnDuty">Kedi Nir Görevde</span>
+              </div>
+
+              <!-- İndirme Simülatörü Toast -->
+              <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-blue-500/30 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-blue-300 font-bold">
+                    4K
+                  </div>
+                  <div class="text-left">
+                    <div class="text-slate-200 font-semibold truncate max-w-[140px]">video_1080p.mp4</div>
+                    <div class="text-[10px] text-emerald-400 flex items-center gap-1">
+                      <span>✓</span> <span data-i18n="nirToastDone">İndirme Tamamlandı</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-blue-400 font-mono text-[11px] font-bold">0.4s</div>
+              </div>
+            </div>
+
+            <!-- Nir'in İndirme Butonu Göstergesi -->
+            <div class="p-3 rounded-xl bg-slate-800/40 border border-slate-700/50 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Tweet Butonu:</span>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/20 border border-blue-500/40 text-blue-400 font-semibold">
+                <svg class="w-3.5 h-3.5 animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 17V3"/><path d="m6 11 6 6 6-6"/><path d="M19 21H5"/></svg>
+                <span data-i18n="nirButtonLabel">İndir (Nir)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
-      <div class="cta-group">
-        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" class="btn btn-primary" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          <span data-i18n="btnGithub">GitHub'da İncele</span>
-        </a>
-        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL/releases/latest" class="btn btn-secondary" target="_blank" rel="noopener">
-          <span data-i18n="btnDownload">Son Sürümü İndir 📦</span>
-        </a>
-      </div>
-
-      <!-- Store Badges Section -->
-      <div class="store-badges-wrapper">
-        <p class="store-badges-title" data-i18n="storeTitle">Desteklenen Tarayıcılar ve Mağazalar</p>
-        <div class="store-badges">
-          <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" class="store-badge-card" title="Chrome Web Store" target="_blank">
-            <img src="assets/chrome.svg" alt="Chrome" width="34" height="34" />
-            <div class="store-badge-text">
-              <span class="store-sub">Chrome</span>
-              <span class="store-name">Web Store</span>
+      <!-- Desteklenen Tarayıcılar ve Orijinal Mağaza Butonları (Chrome, Edge, Helium) -->
+      <div class="mb-20 text-center">
+        <p class="text-xs font-semibold tracking-wider text-slate-400 uppercase mb-5" data-i18n="storeTitle">Desteklenen Tarayıcılar ve Mağazalar</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          
+          <!-- Chrome Web Store -->
+          <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" class="glass-panel px-5 py-3.5 flex items-center gap-3.5 hover:border-blue-500/50 transition duration-200 no-underline text-inherit group shadow-md" title="Chrome Web Store" target="_blank" rel="noopener">
+            <img src="assets/chrome.svg" alt="Google Chrome" width="36" height="36" class="group-hover:scale-110 transition-transform duration-200" />
+            <div class="flex flex-col text-left">
+              <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Chrome</span>
+              <span class="text-sm font-bold text-slate-100 group-hover:text-blue-400 transition-colors">Web Store</span>
             </div>
           </a>
-          <a href="https://microsoftedge.microsoft.com/addons/detail/xdownloader-haytool/ehpcnkiobcjfgnepikdmempghdonipkb" class="store-badge-card" title="Microsoft Edge" target="_blank">
-            <img src="assets/edge.svg" alt="Edge" width="34" height="34" />
-            <div class="store-badge-text">
-              <span class="store-sub">Microsoft</span>
-              <span class="store-name">Edge Add-ons</span>
+
+          <!-- Microsoft Edge -->
+          <a href="https://microsoftedge.microsoft.com/addons/detail/xdownloader-haytool/ehpcnkiobcjfgnepikdmempghdonipkb" class="glass-panel px-5 py-3.5 flex items-center gap-3.5 hover:border-blue-500/50 transition duration-200 no-underline text-inherit group shadow-md" title="Microsoft Edge Add-ons" target="_blank" rel="noopener">
+            <img src="assets/edge.svg" alt="Microsoft Edge" width="36" height="36" class="group-hover:scale-110 transition-transform duration-200" />
+            <div class="flex flex-col text-left">
+              <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Microsoft</span>
+              <span class="text-sm font-bold text-slate-100 group-hover:text-blue-400 transition-colors">Edge Add-ons</span>
             </div>
           </a>
-          <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" class="store-badge-card" title="Helium Browser" target="_blank">
-            <img src="assets/helium.png" alt="Helium" width="34" height="34" />
-            <div class="store-badge-text">
-              <span class="store-sub">Helium</span>
-              <span class="store-name">Browser</span>
+
+          <!-- Helium Browser -->
+          <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" class="glass-panel px-5 py-3.5 flex items-center gap-3.5 hover:border-blue-500/50 transition duration-200 no-underline text-inherit group shadow-md" title="Helium Browser" target="_blank" rel="noopener">
+            <img src="assets/helium.png" alt="Helium Browser" width="36" height="36" class="group-hover:scale-110 transition-transform duration-200 rounded-sm" />
+            <div class="flex flex-col text-left">
+              <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Helium</span>
+              <span class="text-sm font-bold text-slate-100 group-hover:text-blue-400 transition-colors">Browser</span>
             </div>
           </a>
+
         </div>
       </div>
 
-      <!-- Stats Band -->
-      <div class="stats-band">
-        <div class="stat-item">
-          <span class="stat-value" data-i18n="stat1Value">Açık Kaynak</span>
-          <span class="stat-label" data-i18n="stat1Label">MIT Lisansı</span>
+      <!-- Kedi Nir'in 3 Adımda İndirme Rehberi -->
+      <div class="mb-20 text-left">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold mb-3">Kedi Nir Nasıl İndirir?</h2>
+          <p class="text-sm text-slate-400">Karmaşık ayarlarla uğraşma. Nir senin için her şeyi 3 basit adımda çözer.</p>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-value" data-i18n="stat2Value">1080p / 4K</span>
-          <span class="stat-label" data-i18n="stat2Label">Video Kalitesi</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-value" data-i18n="stat3Value">Sıfır</span>
-          <span class="stat-label" data-i18n="stat3Label">Veri Toplama</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-value" data-i18n="stat4Value">Reklamsız</span>
-          <span class="stat-label" data-i18n="stat4Label">Tamamen Ücretsiz</span>
-        </div>
-      </div>
 
-      <!-- Features Grid -->
-      <div class="features-grid">
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3 data-i18n="feat1Title">Anında İndirme</h3>
-          <p data-i18n="feat1Desc">Tweetlerin altına entegre olan indirme butonuyla tek tıklamayla medyayı kaydedin.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💎</div>
-          <h3 data-i18n="feat2Title">En Yüksek Çözünürlük</h3>
-          <p data-i18n="feat2Desc">Videolarda 1080p / 4K ve fotoğraflarda maksimum orijinal boyut seçeneği.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔒</div>
-          <h3 data-i18n="feat3Title">Gizlilik Odaklı</h3>
-          <p data-i18n="feat3Desc">Verileriniz hiçbir üçüncü taraf sunucuya aktarılmaz. İndirmeler doğrudan yerel yapılır.</p>
-        </div>
-      </div>
-
-      <!-- How to Install -->
-      <div class="section-block">
-        <h2 class="section-title" data-i18n="installTitle">Nasıl Kurulur?</h2>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <h3 data-i18n="step1Title">1. İndir</h3>
-            <p data-i18n="step1Desc">GitHub Releases sayfasından en son .crx veya .zip dosyasını indirin.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-panel p-6 relative overflow-hidden group">
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">🐾</div>
+            <div class="text-blue-500 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 01</div>
+            <h3 class="text-base font-bold mb-2">Eklentiyi Kur</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Chrome veya Edge mağazasından tek tıkla kur. Kayıt olmak veya hesap bağlamak gerekmez.</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <h3 data-i18n="step2Title">2. Yükle</h3>
-            <p data-i18n="step2Desc">Tarayıcınızın Uzantılar sayfasını açın, geliştirici modunu etkinleştirin ve dosyayı sürükleyip bırakın.</p>
+
+          <div class="glass-panel p-6 relative overflow-hidden group border-blue-500/30">
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">👀</div>
+            <div class="text-blue-500 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 02</div>
+            <h3 class="text-base font-bold mb-2">Tweet'i Bul</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">X'te gezinirken videolu veya fotoğraflı bir tweet gördüğünde altındaki mavi indirme simgesine bak.</p>
           </div>
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <h3 data-i18n="step3Title">3. Kullan</h3>
-            <p data-i18n="step3Desc">X / Twitter'a gidin. Tweet'lerin altında indirme butonu otomatik olarak belirecektir.</p>
+
+          <div class="glass-panel p-6 relative overflow-hidden group">
+            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">⚡</div>
+            <div class="text-blue-500 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 03</div>
+            <h3 class="text-base font-bold mb-2">Tek Tıkla Kap</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Butona tıkla. Nir saniyeler içinde medyayı en yüksek çözünürlükle bilgisayarına indirsin!</p>
           </div>
         </div>
       </div>
 
-      <!-- FAQ Section -->
-      <div class="section-block">
-        <h2 class="section-title" data-i18n="faqTitle">Sık Sorulan Sorular</h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" data-i18n="faq1Q">Hangi tarayıcılarla uyumlu?</button>
-            <div class="faq-answer"><p data-i18n="faq1A">Chrome, Chromium tabanlı tüm tarayıcılar (Edge, Brave, Opera, Helium vb.) ve WebExtension API destekleyen tarayıcılarla uyumludur.</p></div>
+      <!-- Nir'in Özellikleri -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 text-left">
+        <div class="glass-panel p-6 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 text-lg">
+            💎
           </div>
-          <div class="faq-item">
-            <button class="faq-question" data-i18n="faq2Q">Verilerimi topluyor mu?</button>
-            <div class="faq-answer"><p data-i18n="faq2A">Hayır. XDownloader HaYTooL hiçbir kişisel bilginizi, indirme geçmişinizi veya X hesap bilgilerinizi kayıt altına almaz ya da herhangi bir sunucuya göndermez.</p></div>
+          <h3 class="text-base font-bold">Orijinal Kalite</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Videolarda 1080p ve 4K, fotoğraflarda ise X'in sunduğu maksimum orijinal piksel çözünürlüğü korunur.</p>
+        </div>
+
+        <div class="glass-panel p-6 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 text-lg">
+            🛡️
           </div>
-          <div class="faq-item">
-            <button class="faq-question" data-i18n="faq3Q">Mağazalardan nasıl indirebilirim?</button>
-            <div class="faq-answer"><p data-i18n="faq3A">Yukarıdaki Chrome Web Store ve Microsoft Edge Add-ons butonlarına tıklayarak doğrudan resmi mağazalardan tek tıkla kurabilirsiniz.</p></div>
+          <h3 class="text-base font-bold">Sıfır Veri Takibi</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Nir gizliliğe saygılıdır. İndirmeler doğrudan yerel tarayıcı üzerinden yapılır, aracı sunucu kullanılmaz.</p>
+        </div>
+
+        <div class="glass-panel p-6 flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 text-lg">
+            🚀
           </div>
-          <div class="faq-item">
-            <button class="faq-question" data-i18n="faq4Q">Ücretsiz mi?</button>
-            <div class="faq-answer"><p data-i18n="faq4A">Evet, tamamen ücretsiz ve açık kaynaklıdır. MIT lisansı altında dağıtılmaktadır.</p></div>
+          <h3 class="text-base font-bold">Reklamsız & Ücretsiz</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Sitede veya eklentide hiçbir reklam, pop-up ya da ücretli abonelik kısıtlaması bulunmaz.</p>
+        </div>
+      </div>
+
+      <!-- SSS -->
+      <div class="max-w-2xl mx-auto text-left">
+        <h2 class="text-2xl font-bold mb-6 text-center">Nir'e Sıkça Sorulanlar</h2>
+        <div class="flex flex-col gap-3">
+          <div class="glass-panel overflow-hidden faq-item">
+            <button class="faq-question w-full p-4 flex items-center justify-between text-left text-sm font-semibold cursor-pointer">
+              Hangi formatları indirebilirim?
+            </button>
+            <div class="faq-answer px-4 pb-4 text-xs text-slate-400">
+              <p>MP4 formatında yüksek kaliteli videolar, JPG/PNG formatında orijinal fotoğraflar ve animasyonlu GIF medyalarını doğrudan indirebilirsiniz.</p>
+            </div>
+          </div>
+
+          <div class="glass-panel overflow-hidden faq-item">
+            <button class="faq-question w-full p-4 flex items-center justify-between text-left text-sm font-semibold cursor-pointer">
+              X hesabımla giriş yapmam gerekir mi?
+            </button>
+            <div class="faq-answer px-4 pb-4 text-xs text-slate-400">
+              <p>Hayır! Eklenti tarayıcınızda halihazırda açık olan oturum üzerinden medyaları çeker; ek olarak hiçbir şifre veya oturum açma talep etmez.</p>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <p data-i18n="footerText">© 2026 XDownloader HaYTooL. Açık kaynaklı ve bağımsızdır.</p>
-
-      <div class="footer-links">
-        <a href="https://haytokoraz.github.io/" target="_blank">Portal</a>
-        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank">GitHub</a>
-        <a href="privacy.html" data-i18n="privacyLink">Gizlilik Politikası</a>
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/40 py-8 text-xs text-slate-500 relative z-10">
+    <div class="site-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="flex items-center gap-2 justify-center sm:justify-start">
+        <span>🐾</span>
+        <p>© 2026 XDownloader HaYTooL & Kedi Nir. Açık kaynaklı ve bağımsızdır.</p>
+      </div>
+      <div class="flex items-center gap-6 justify-center">
+        <a href="https://haytokoraz.github.io/" target="_blank" rel="noopener" class="hover:text-blue-400 transition">Portal</a>
+        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" rel="noopener" class="hover:text-blue-400 transition">GitHub</a>
+        <a href="privacy.html" class="hover:text-blue-400 transition">Gizlilik Politikası</a>
       </div>
     </div>
   </footer>
