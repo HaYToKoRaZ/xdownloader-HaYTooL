@@ -38,10 +38,19 @@
   <meta name="twitter:site" content="@HaYTo" />
   <meta name="twitter:creator" content="@HaYTo" />
   
-  <link rel="icon" type="image/png" href="assets/icon128.png" />
+  <link rel="icon" type="image/png" href="assets/icon64.png" />
+  
+  <!-- Font Preconnect & Non-blocking Load (Eliminates Render-Blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" />
+  </noscript>
+  
+  <!-- LCP Görseli için Preload (AVIF & WebP) -->
+  <link rel="preload" fetchpriority="high" as="image" href="assets/cat_mascot.avif" type="image/avif" />
   
   <link rel="stylesheet" href="tailwind.css" />
   
@@ -113,14 +122,17 @@
     <div class="site-container flex items-center justify-between h-16">
       <a href="index.html" class="flex items-center gap-3 no-underline text-inherit group">
         <div class="relative">
-          <img src="assets/icon128.png" alt="XDownloader HaYTooL" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-200" />
+          <picture>
+            <source srcset="assets/icon64.webp" type="image/webp" />
+            <img src="assets/icon64.png" alt="XDownloader HaYTooL" width="32" height="32" class="w-8 h-8 rounded-lg shadow-md group-hover:scale-105 transition-transform duration-200" />
+          </picture>
           <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
           </span>
         </div>
         <span class="font-bold text-lg tracking-tight flex items-center gap-2">
-          XDownloader <span class="text-blue-500 font-semibold text-xs px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">Nir Edition</span>
+          XDownloader <span class="text-blue-400 font-semibold text-xs px-2 py-0.5 rounded bg-blue-500/15 border border-blue-400/30">Nir Edition</span>
         </span>
       </a>
 
@@ -199,7 +211,11 @@
           <div class="glass-panel p-4 rounded-3xl relative overflow-hidden shadow-2xl border-blue-500/30 group">
             
             <div class="relative rounded-2xl overflow-hidden mb-4 bg-slate-950">
-              <img src="assets/cat_mascot.jpg" alt="Maskot Kedi Nir bilgisayar başında indirme yapıyor" width="460" height="460" class="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" fetchpriority="high" />
+              <picture>
+                <source srcset="assets/cat_mascot.avif" type="image/avif" />
+                <source srcset="assets/cat_mascot.webp" type="image/webp" />
+                <img src="assets/cat_mascot_500.jpg" alt="Maskot Kedi Nir bilgisayar başında indirme yapıyor" width="460" height="460" class="w-full h-auto object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500" fetchpriority="high" decoding="async" />
+              </picture>
               
               <!-- Nir Durum Rozeti -->
               <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-blue-300 flex items-center gap-1.5">
@@ -263,7 +279,10 @@
 
           <!-- Helium Browser -->
           <a href="https://chromewebstore.google.com/detail/jnlbcckjheilahbmllldndcgamfahnfb" class="glass-panel px-5 py-3.5 flex items-center gap-3.5 hover:border-blue-500/50 transition duration-200 no-underline text-inherit group shadow-md" title="Helium Browser" target="_blank" rel="noopener">
-            <img src="assets/helium.png" alt="Helium Browser" width="36" height="36" class="group-hover:scale-110 transition-transform duration-200 rounded-sm" />
+            <picture>
+              <source srcset="assets/helium.webp" type="image/webp" />
+              <img src="assets/helium_72.png" alt="Helium Browser" width="36" height="36" class="group-hover:scale-110 transition-transform duration-200 rounded-sm" />
+            </picture>
             <div class="flex flex-col text-left">
               <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider">Helium</span>
               <span class="text-sm font-bold text-slate-100 group-hover:text-blue-400 transition-colors">Browser</span>
@@ -283,23 +302,23 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="glass-panel p-6 relative overflow-hidden group">
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">🐾</div>
-            <div class="text-blue-500 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 01</div>
+            <div class="text-blue-400 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 01</div>
             <h3 class="text-base font-bold mb-2">Eklentiyi Kur</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">Chrome veya Edge mağazasından tek tıkla kur. Kayıt olmak veya hesap bağlamak gerekmez.</p>
+            <p class="text-xs text-slate-300 leading-relaxed">Chrome veya Edge mağazasından tek tıkla kur. Kayıt olmak veya hesap bağlamak gerekmez.</p>
           </div>
 
           <div class="glass-panel p-6 relative overflow-hidden group border-blue-500/30">
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">👀</div>
-            <div class="text-blue-500 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 02</div>
+            <div class="text-blue-400 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 02</div>
             <h3 class="text-base font-bold mb-2">Tweet'i Bul</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">X'te gezinirken videolu veya fotoğraflı bir tweet gördüğünde altındaki mavi indirme simgesine bak.</p>
+            <p class="text-xs text-slate-300 leading-relaxed">X'te gezinirken videolu veya fotoğraflı bir tweet gördüğünde altındaki mavi indirme simgesine bak.</p>
           </div>
 
           <div class="glass-panel p-6 relative overflow-hidden group">
             <div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-200">⚡</div>
-            <div class="text-blue-500 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 03</div>
+            <div class="text-blue-400 font-mono font-bold text-xs uppercase tracking-wider mb-1">Adım 03</div>
             <h3 class="text-base font-bold mb-2">Tek Tıkla Kap</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">Butona tıkla. Nir saniyeler içinde medyayı en yüksek çözünürlükle bilgisayarına indirsin!</p>
+            <p class="text-xs text-slate-300 leading-relaxed">Butona tıkla. Nir saniyeler içinde medyayı en yüksek çözünürlükle bilgisayarına indirsin!</p>
           </div>
         </div>
       </div>
@@ -359,16 +378,16 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800/40 py-8 text-xs text-slate-500 relative z-10">
+  <footer class="border-t border-slate-800/60 py-8 text-xs text-slate-400 relative z-10">
     <div class="site-container flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div class="flex items-center gap-2 justify-center sm:justify-start">
+      <div class="flex items-center gap-2 justify-center sm:justify-start text-slate-300">
         <span>🐾</span>
         <p>© 2026 XDownloader HaYTooL & Kedi Nir. Açık kaynaklı ve bağımsızdır.</p>
       </div>
       <div class="flex items-center gap-6 justify-center">
-        <a href="https://haytokoraz.github.io/" target="_blank" rel="noopener" class="hover:text-blue-400 transition">Portal</a>
-        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" rel="noopener" class="hover:text-blue-400 transition">GitHub</a>
-        <a href="privacy.html" class="hover:text-blue-400 transition">Gizlilik Politikası</a>
+        <a href="https://haytokoraz.github.io/" target="_blank" rel="noopener" class="text-slate-300 hover:text-blue-400 transition font-medium">Portal</a>
+        <a href="https://github.com/HaYToKoRaZ/xdownloader-HaYTooL" target="_blank" rel="noopener" class="text-slate-300 hover:text-blue-400 transition font-medium">GitHub</a>
+        <a href="privacy.html" class="text-slate-300 hover:text-blue-400 transition font-medium">Gizlilik Politikası</a>
       </div>
     </div>
   </footer>
