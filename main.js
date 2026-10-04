@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* HaYTooL Pulse (Daily Unique Visitor) */
+/* HaYTooL Pulse (Daily Unique Visitor) - Non-blocking / Defer */
 (function() {
   const PING_URL = 'https://hayto-telemetry.korazhayto.workers.dev/api/ping';
   const APP_ID = 'web_xdownloader';
@@ -277,6 +277,19 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch(e) {}
   }
 
-  sendPulse();
-  setInterval(sendPulse, 2 * 60 * 1000);
+  function schedulePulse() {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(sendPulse, { timeout: 4000 });
+    } else {
+      setTimeout(sendPulse, 2500);
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    schedulePulse();
+  } else {
+    window.addEventListener('load', schedulePulse);
+  }
+
+  setInterval(sendPulse, 3 * 60 * 1000);
 })();
